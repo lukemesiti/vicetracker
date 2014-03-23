@@ -1,0 +1,8 @@
+<h2>Your Vices</h2>
+
+<%= link_to 'Add a Vice', new_vice_path %>
+
+<% @vices.each do |vice| %>
+    <p><%= link_to vice.name, vice %></p>
+    <p><%= link_to 'delete', vice, method: delete, data: { confirm: 'Are you sure?'} %></p>
+<% end %>
