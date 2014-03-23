@@ -24,6 +24,13 @@ class VicesController < ApplicationController
         end
     end
 
+    def destroy
+        @vice.destroy
+        respond_to do |format|
+            format.html { redirect_to vices_path }
+        end
+    end
+
     private
 
     def set_vice

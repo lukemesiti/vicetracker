@@ -4,5 +4,5 @@
 
 <% @vices.each do |vice| %>
     <p><%= link_to vice.name, vice %></p>
-    <p><%= link_to 'delete', vice, method: delete, data: { confirm: 'Are you sure?'} %></p>
+    <p><%= link_to 'delete', vice, method: :delete, data: { confirm: 'Are you sure?'} %></p>
 <% end %>
