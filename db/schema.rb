@@ -11,10 +11,25 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20140323072413) do
+ActiveRecord::Schema.define(version: 20140323101518) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
+
+  create_table "consumed_at", force: true do |t|
+    t.integer  "quantity"
+    t.integer  "cost"
+    t.datetime "created_at"
+    t.integer  "subvice_id"
+  end
+
+  create_table "subvices", force: true do |t|
+    t.string  "name"
+    t.integer "consumed_per_day"
+    t.integer "cost_per_day"
+    t.boolean "aim_to_quit"
+    t.integer "vice_id"
+  end
 
   create_table "users", force: true do |t|
     t.string   "email",                  default: "", null: false
@@ -33,5 +48,10 @@ ActiveRecord::Schema.define(version: 20140323072413) do
 
   add_index "users", ["email"], name: "index_users_on_email", unique: true, using: :btree
   add_index "users", ["reset_password_token"], name: "index_users_on_reset_password_token", unique: true, using: :btree
+
+  create_table "vices", force: true do |t|
+    t.string  "name"
+    t.integer "user_id"
+  end
 
 end
