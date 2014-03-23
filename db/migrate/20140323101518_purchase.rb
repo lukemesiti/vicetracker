@@ -1,6 +1,6 @@
-class ConsumedAt < ActiveRecord::Migration
+class Purchase < ActiveRecord::Migration
   def change
-    create_table(:consumed_at) do |t|
+    create_table(:purchases) do |t|
         t.integer :quantity
         t.integer :cost
         t.timestamp :created_at
