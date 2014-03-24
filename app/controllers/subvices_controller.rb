@@ -1,6 +1,6 @@
 class SubvicesController < ApplicationController
-    before_action :set_vice, only: [:new, :create, :destroy]
     before_action :set_subvice, only: [:destroy]
+    before_action :set_vice, only: [:new, :create, :destroy]
 
     def new
         @subvice = current_user.subvices.build(vice: @vice)
@@ -27,7 +27,11 @@ class SubvicesController < ApplicationController
     end
 
     def set_vice
-        @vice = current_user.vices.find(params[:vice_id])
+        if params[:vice_id].present?
+            @vice = current_user.vices.find(params[:vice_id])
+        else
+            @vice = @subvice.vice if @subvice.present?
+        end
     end
 
     def subvice_params

@@ -10,7 +10,8 @@
         <li><%= subvice.consumed_per_day %></li>
         <li><%= subvice.cost_per_day %></li>
         <li><%= subvice.goal %></li>
-        <li><%= link_to 'Delete sub category', vice_subvice_path(@vice, subvice), method: :delete, data: { confirm: 'Are you sure?' } %></li>
+
+        <li><%= link_to 'Delete sub category', subvice, method: :delete, data: { confirm: 'Are you sure?' } %></li>
     </ul>
     
     <% end %>
