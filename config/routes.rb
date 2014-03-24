@@ -34,7 +34,9 @@ Vicetracker::Application.routes.draw do
   #   end
 
   resources :vices do
-    resources :subvices
+    resources :subvices, shallow: true do
+      resources :purchases, shallow: true
+    end
   end
 
 
