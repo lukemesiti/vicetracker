@@ -10,6 +10,7 @@ class VicesController < ApplicationController
     end
 
     def show
+        @subvices = @vice.subvices
     end
 
     def create

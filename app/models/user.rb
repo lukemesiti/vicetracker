@@ -6,4 +6,7 @@ class User < ActiveRecord::Base
 
   has_and_belongs_to_many :vices
 
+  has_many :subvices # , through: :vices
+
+
 end

@@ -1,8 +1,21 @@
 <h2>Show Vice</h2>
 
 <p><%= @vice.name %></p>
-
 <p><%= link_to 'Delete Vice', @vice, method: :delete, data: { confirm: 'Are you sure?' } %></p>
 
+<% if @subvices.present? %>
+    <% @subvices.each do |subvice| %>
+    <ul>
+        <li><%= subvice.name %></li>
+        <li><%= subvice.consumed_per_day %></li>
+        <li><%= subvice.cost_per_day %></li>
+        <li><%= subvice.goal %></li>
+        <li><%= link_to 'Delete sub category', vice_subvice_path(@vice, subvice), method: :delete, data: { confirm: 'Are you sure?' } %></li>
+    </ul>
+    
+    <% end %>
+<% end %>
+
+<p><%= link_to 'Add Sub category', new_vice_subvice_path(@vice) %></p>
 <%= link_to 'Back', vices_path %>
 
