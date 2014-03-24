@@ -35,6 +35,11 @@ Vicetracker::Application.routes.draw do
 
   resources :vices
 
+  resources :subvices
+
+
+  root 'vices#index'
+
   # resources :subvices
 
   # resources :purchases
