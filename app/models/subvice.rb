@@ -1,6 +1,6 @@
 class Subvice < ActiveRecord::Base
     belongs_to :vice
     belongs_to :user
-    has_many :purchases
+    has_many :purchases, dependent: :destroy
     
 end

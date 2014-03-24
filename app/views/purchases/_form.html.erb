@@ -1,0 +1,16 @@
+<%= form_for([@subvice, @purchase]) do |f| %>
+    
+    <div class="field">
+        <%= f.label :quantity %>
+        <%= f.text_field :quantity, required: true %>
+    </div>
+
+    <div class="field">
+        <%= f.label :cost %>
+        <%= f.text_field :cost, required: true %>
+    </div>
+
+    <div class="actions">
+        <%= f.submit %>
+    </div>
+<% end %>
