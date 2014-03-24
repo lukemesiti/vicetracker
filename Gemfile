@@ -6,8 +6,11 @@ gem 'rails', '4.0.2'
 # Use postgresql as the database for Active Record
 gem 'pg'
 
-# User devise for authentication
+# Use devise for authentication
 gem 'devise'
+
+#Use pry for debugging
+gem 'pry-rails'
 
 # Use SCSS for stylesheets
 gem 'sass-rails', '~> 4.0.0'
