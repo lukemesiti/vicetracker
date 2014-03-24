@@ -1,44 +1,32 @@
 class VicesController < ApplicationController
-    before_action :set_vice, only: [:show]
+    before_action :set_vice, only: [:show, :destroy]
 
     def index
-        @vices = Vice.all
+        @vices = current_user.vices
     end
 
     def new
-        @vice = Vice.new
+        @vice = current_user.vices.new
     end
 
     def show
     end
 
     def create
-        @vice = Vice.new(vice_params)
-
-        respond_to do |format|
-            if @vice.save
-                format.html { redirect_to @vice, notice: 'Vice was successfully created.' }
-            else
-                format.html { render action: 'new' }
-            end
-        end
+        @vice = Vice.find_by(name: params[:vice][:name])
+        current_user.vices << @vice
+        redirect_to vices_path
     end
 
     def destroy
-        @vice.destroy
-        respond_to do |format|
-            format.html { redirect_to vices_path }
-        end
+        current_user.vices.delete(@vice)
+        redirect_to vices_path
     end
 
     private
 
     def set_vice
-        @vice = Vice.find(params[:id])
-    end
-
-    def vice_params
-      params.require(:vice).permit(:name)
+        @vice = current_user.vices.find(params[:id])
     end
 
 end
