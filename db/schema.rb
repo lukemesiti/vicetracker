@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20140323101518) do
+ActiveRecord::Schema.define(version: 20140324012006) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -27,9 +27,12 @@ ActiveRecord::Schema.define(version: 20140323101518) do
     t.string  "name"
     t.integer "consumed_per_day"
     t.integer "cost_per_day"
-    t.boolean "aim_to_quit"
     t.integer "vice_id"
+    t.integer "goal"
+    t.integer "user_id"
   end
+
+  add_index "subvices", ["user_id"], name: "index_subvices_on_user_id", using: :btree
 
   create_table "users", force: true do |t|
     t.string   "email",                  default: "", null: false
@@ -49,9 +52,16 @@ ActiveRecord::Schema.define(version: 20140323101518) do
   add_index "users", ["email"], name: "index_users_on_email", unique: true, using: :btree
   add_index "users", ["reset_password_token"], name: "index_users_on_reset_password_token", unique: true, using: :btree
 
+  create_table "users_vices", id: false, force: true do |t|
+    t.integer "vice_id", null: false
+    t.integer "user_id", null: false
+  end
+
+  add_index "users_vices", ["user_id", "vice_id"], name: "index_users_vices_on_user_id_and_vice_id", using: :btree
+  add_index "users_vices", ["vice_id", "user_id"], name: "index_users_vices_on_vice_id_and_user_id", using: :btree
+
   create_table "vices", force: true do |t|
-    t.string  "name"
-    t.integer "user_id"
+    t.string "name"
   end
 
 end
