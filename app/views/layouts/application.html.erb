@@ -4,6 +4,7 @@
   <title>Vicetracker</title>
   <%= stylesheet_link_tag    "application", media: "all", "data-turbolinks-track" => true %>
   <%= javascript_include_tag "application", "data-turbolinks-track" => true %>
+  <%= javascript_include_tag "//www.google.com/jsapi", "chartkick" %>
   <%= csrf_meta_tags %>
 </head>
 <body>
@@ -11,6 +12,7 @@
     <%= link_to 'logout', destroy_user_session_path, :method => :delete %>
 
 <%= yield %>
+
 
 </body>
 </html>

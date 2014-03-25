@@ -21,6 +21,15 @@ gem 'uglifier', '>= 1.3.0'
 # Use CoffeeScript for .js.coffee assets and views
 gem 'coffee-rails', '~> 4.0.0'
 
+# Use bootstrap sass gem for styling
+gem 'bootstrap-sass'
+
+# Used chartkick to create charts
+gem "chartkick"
+
+# Used to group data in sets by time period i.e. day/week/month/year
+gem 'groupdate'
+
 # See https://github.com/sstephenson/execjs#readme for more supported runtimes
 # gem 'therubyracer', platforms: :ruby
 
