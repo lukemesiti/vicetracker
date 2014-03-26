@@ -9,6 +9,9 @@
 </head>
 <body>
 
+    <div class="notice"><%= notice %></div>
+    <div class="alert"><%= alert %></div>
+
     <%= link_to 'logout', destroy_user_session_path, :method => :delete %>
 
 <%= yield %>

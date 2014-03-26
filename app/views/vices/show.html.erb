@@ -4,11 +4,11 @@
 <%= link_to 'Back', vices_path %>
 <p><%= link_to 'Delete Vice', @vice, method: :delete, data: { confirm: 'Are you sure?' } %></p>
 
-    <%= line_chart @subvices.map{|subvice|
+    <%= column_chart @subvices.map{|subvice|
         {name: subvice.name, data: subvice.purchases.group_by_day(:created_at).sum(:quantity)}
     } %>
 
-    <%= bar_chart @subvices.map{|subvice|
+    <%= line_chart @subvices.map{|subvice|
         {name: subvice.name, data: subvice.purchases.group_by_day(:created_at).sum(:cost)}
     } %>
 
@@ -17,6 +17,7 @@
     <ul>
         <li><%= subvice.name %></li>
         <li><%= subvice.consumed_per_day %></li>
+        <li><%= distance_of_time_in_words(Time.now - current_user.last_time_consumed(subvice.id)) %> since last consumed</li>
         <li><%= subvice.cost_per_day %></li>
         <li><%= subvice.goal %></li>
         <li><%= link_to 'add purchase', new_subvice_purchase_path(subvice) %></li>

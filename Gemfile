@@ -47,6 +47,23 @@ group :doc do
   gem 'sdoc', require: false
 end
 
+group :test do
+    # for better tests
+    gem 'shoulda'
+
+    # mocking and stubbing
+    gem 'mocha'
+
+    # for prettier test-output
+    gem 'turn'
+
+    # simple code-coverage tool
+    gem 'simplecov', :require => false
+
+    # fixtures replacement
+    gem 'factory_girl_rails'
+end
+
 # Use ActiveModel has_secure_password
 # gem 'bcrypt-ruby', '~> 3.1.2'
 
