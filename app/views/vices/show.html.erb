@@ -16,10 +16,14 @@
     <% @subvices.each do |subvice| %>
     <ul>
         <li><%= subvice.name %></li>
-        <li><%= subvice.consumed_per_day %></li>
         <li><%= distance_of_time_in_words(Time.now - current_user.last_time_consumed(subvice.id)) %> since last consumed</li>
-        <li><%= subvice.cost_per_day %></li>
-        <li><%= subvice.goal %></li>
+        
+        <li>Goal <%= subvice.goal %></li>
+
+        <li>Amount would have spent - actually spent $<%= subvice.cost_per_day * ((Time.now - subvice.created_at)/86400) - subvice.purchases.sum('cost') %></li>
+
+        <li>amount would have consumed - actually consumed <%= subvice.consumed_per_day * ((Time.now - subvice.created_at)/86400) - subvice.purchases.sum('quantity') %></li>
+
         <li><%= link_to 'add purchase', new_subvice_purchase_path(subvice) %></li>
         <li><%= link_to 'edit sub category', edit_subvice_path(subvice) %></li>
         <li><%= link_to 'Delete sub category', subvice, method: :delete, data: { confirm: 'Are you sure?' } %></li>

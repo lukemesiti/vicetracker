@@ -34,13 +34,17 @@ class UserTest < ActiveSupport::TestCase
         end
     end
 
-    # context "time_since_last_consumed" do
-    #     should "return the amount of time since last consumed" do
-    #         subvice = FactoryGirl.create(:subvice)
-    #         last_p = subvice.purchases.create(attributes_for(:purchase))
-    #         last_c = last_p.created_at
-    #         t_last_c = DateTime.now - last_c
-    #         assert_equal t_last_c, subvice.user.time_since_last_consumed(subvice.id)
-    #     end
-    # end
+    context "seconds_since_last_consumed" do
+        should "return the seconds since last consumed" do
+            subvice = FactoryGirl.create(:subvice)
+            last_p = subvice.purchases.create(attributes_for(:purchase))
+            last_c = last_p.created_at
+            sec_since_last_c = Time.now - last_c
+            assert_equal sec_since_last_c, subvice.user.seconds_since_last_consumed(subvice.id)
+        end
+    end
+
+    context "money_saved" do
+        should "return the amount of money saved "
+    end
 end

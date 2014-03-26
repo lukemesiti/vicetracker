@@ -23,7 +23,8 @@ class User < ActiveRecord::Base
     self.purchases.where(subvice_id: subvice_id).order(:created_at).last
   end
 
-  def time_since_last_consumed(subvice_id)
+  def seconds_since_last_consumed(subvice_id)
     Time.now - last_time_consumed(subvice_id)
   end
+
 end
