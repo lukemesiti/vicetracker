@@ -1,0 +1,27 @@
+<%= form_for(@subvice) do |f| %>
+
+  <div class="field">
+        <%= f.label :name %>
+        <%= f.text_field :name, required: true %>
+    </div>
+
+    <div class="field">
+        <%= f.label :average_amount_consumed_per_day %>
+        <%= f.text_field :consumed_per_day %>
+    </div>
+
+    <div class="field">
+        <%= f.label :average_cost_per_day %>
+        <%= f.text_field :cost_per_day %>
+    </div>
+
+    <div class="field">
+        <%= f.label :goal %>
+        <%= f.text_field :goal %>    
+    </div>
+
+    <div class="actions">
+        <%= f.submit %>
+    </div>
+    
+<% end %>

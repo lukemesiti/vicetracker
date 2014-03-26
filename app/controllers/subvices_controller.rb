@@ -1,6 +1,6 @@
 class SubvicesController < ApplicationController
-    before_action :set_subvice, only: [:destroy]
-    before_action :set_vice, only: [:new, :create, :destroy]
+    before_action :set_subvice, only: [:destroy, :edit, :update]
+    before_action :set_vice, only: [:new, :create, :destroy, :edit, :update]
 
     def new
         @subvice = current_user.subvices.build(vice: @vice)
@@ -13,6 +13,16 @@ class SubvicesController < ApplicationController
         @subvice.save
 
         redirect_to vice_path(@vice)
+    end
+
+    def edit
+        # binding.pry
+    end
+
+    def update
+        @subvice.update(subvice_params)
+
+        redirect_to @vice
     end
 
     def destroy

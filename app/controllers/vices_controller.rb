@@ -10,11 +10,11 @@ class VicesController < ApplicationController
     end
 
     def show
-        @subvices = @vice.subvices
+        @subvices = current_user.subvices.where(vice: @vice)
     end
 
     def create
-        @vice = Vice.find_by(name: params[:vice][:name])
+        @vice = Vice.find_by(id: params[:vice][:id])
         current_user.vices << @vice
         redirect_to vices_path
     end

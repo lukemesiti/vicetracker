@@ -1,0 +1,15 @@
+freds_subvice:
+    name: beer
+    consumed_per_day: 10
+    cost_per_day: 50
+    goal: 2
+    vice_id: freds_vice
+    user_id: fred
+
+wilmas_subvice:
+    name: cigarettes
+    consumed_per_day: 15
+    cost_per_day: 10
+    goal: 0
+    vice_id: wilmas_vice
+    user_id: wilma

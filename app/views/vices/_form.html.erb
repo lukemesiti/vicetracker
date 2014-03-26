@@ -1,7 +1,7 @@
 <%= form_for(@vice) do |f| %>
     
     <div class="field">
-        <%= f.select :name, Vice::CATEGORIES %>
+        <%= f.collection_select(:id, Vice.all, :id, :name) %>
     </div>
     <div class="actions">
         <%= f.submit %>

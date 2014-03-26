@@ -1,6 +1,13 @@
 <h2>Your Vices</h2>
 
-<%= link_to 'Add a Vice', new_vice_path %>
+<p>
+    <%= link_to 'Edit profile', edit_user_path(current_user) %>    
+</p>
+
+<p>
+    <%= link_to 'Add a Vice', new_vice_path %>
+</p>
+
 
 <% @vices.each do |vice| %>
     <div>
