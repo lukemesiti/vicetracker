@@ -14,3 +14,63 @@
         <p><%= link_to vice.name, vice %></p>
     </div>
 <% end %>
+
+
+<div>
+    <h3>Recent Activity</h3>
+
+
+
+    
+    <% start = 0.days.ago %>
+    <% finish = 7.days.ago %>
+
+    
+    <% while(start > finish) do %>
+        <ul>
+            <li>
+                <div>
+                    <%= start.strftime("%A") %>
+                </div>
+            </li>
+
+            <% @vices.each do |vice| %>
+
+                <li><%= vice.name %> goal achieved for:
+                    <% vice.subvices.each do |subvice| %>
+                        <% if current_user.goal_achieved(subvice, Time.now) %>
+                        <%= subvice.name %>,
+                        <% end %>
+
+                    <% end %>
+                </li>
+
+            <% end %>
+            <div>
+                Most consumed was: <% list = current_user.max_consumed_from_all_subvice(start) %>
+                <% list.each do |x| %>
+                    <%= x.name %>
+                    <%= x.q %>
+                <% end %>
+            </div>
+            <div>
+                Most spent was: <% list = current_user.max_spent_from_all_subvice(start) %>
+                <% list.each do |x| %>
+                    <%= x.name %>
+                    <%= x.q %>
+                <% end %>
+            </div>
+            <!-- to get max consumed on a day find max sum quantity subvice on a given day -->
+            <!-- u.each subvice {|subvice| subvice.consumed()} -->
+                
+
+
+
+            <% start -= 1.day %>
+        </ul>
+    <% end %>
+    
+    
+
+    
+</div>
