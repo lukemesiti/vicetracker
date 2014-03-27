@@ -1,10 +1,11 @@
 <%= form_for(@vice) do |f| %>
+    <h2 class="form-signin-heading">New Vice</h2>
     
     <div class="field">
-        <%= f.collection_select(:id, Vice.all, :id, :name) %>
+        <%= f.collection_select :id, Vice.all, :id, :name, :class => "form-control" %>
     </div>
     <div class="actions">
-        <%= f.submit %>
+        <%= f.submit "Add Vice", :class => "btn btn-lg btn-primary btn-block" %>
     </div>
 
 <% end %>

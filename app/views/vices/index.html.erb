@@ -1,76 +1,45 @@
-<h2>Your Vices</h2>
+<div class="container">
+    <h2>Recent Activity</h2>
 
-<p>
-    <%= link_to 'Edit profile', edit_user_path(current_user) %>    
-</p>
-
-<p>
-    <%= link_to 'Add a Vice', new_vice_path %>
-</p>
-
-
-<% @vices.each do |vice| %>
-    <div>
-        <p><%= link_to vice.name, vice %></p>
-    </div>
-<% end %>
-
-
-<div>
-    <h3>Recent Activity</h3>
-
-
-
-    
     <% start = 0.days.ago %>
     <% finish = 7.days.ago %>
-
     
     <% while(start > finish) do %>
-        <ul>
-            <li>
-                <div>
-                    <%= start.strftime("%A") %>
-                </div>
-            </li>
-
-            <% @vices.each do |vice| %>
-
-                <li><%= vice.name %> goal achieved for:
-                    <% vice.subvices.each do |subvice| %>
-                        <% if current_user.goal_achieved(subvice, Time.now) %>
-                        <%= subvice.name %>,
-                        <% end %>
-
-                    <% end %>
+        <div class="col-lg-4">
+            <ul>
+                <li>
+                    <h3><%= start.strftime("%A") %></h3>
                 </li>
+                <li><b>Goal Achieved for</b></li>
+                <% @vices.each do |vice| %>
+                    <li>
+                        <% vice.subvices.each do |subvice| %>
+                            <% if current_user.goal_achieved(subvice, Time.now) %>
+                            <span class="label label-success"><%= subvice.name %></span>
+                            <% end %>
 
-            <% end %>
-            <div>
-                Most consumed was: <% list = current_user.max_consumed_from_all_subvice(start) %>
-                <% list.each do |x| %>
-                    <%= x.name %>
-                    <%= x.q %>
+                        <% end %>
+                    </li>
                 <% end %>
-            </div>
-            <div>
-                Most spent was: <% list = current_user.max_spent_from_all_subvice(start) %>
-                <% list.each do |x| %>
-                    <%= x.name %>
-                    <%= x.q %>
-                <% end %>
-            </div>
-            <!-- to get max consumed on a day find max sum quantity subvice on a given day -->
-            <!-- u.each subvice {|subvice| subvice.consumed()} -->
-                
-
-
-
-            <% start -= 1.day %>
-        </ul>
+                <div>
+                    <li><b>Most consumed</b></li> 
+                    <% list = current_user.max_consumed_from_all_subvice(start) %>
+                    <% if list != 0 %>
+                        <% list.each do |x| %>
+                            <span class="badge"><%= x.q %> x <%= x.name %> </span>
+                        <% end %>
+                    <% end %>
+                </div>
+                <div>
+                    <li><b>Most spent</b></li> <% list = current_user.max_spent_from_all_subvice(start) %>
+                    <% if list != 0 %>
+                        <% list.each do |x| %>
+                            <span class="label label-danger">$<%= x.q %> on <%= x.name %></span>
+                        <% end %>
+                    <% end %>
+                </div>
+            </ul>
+        </div><!-- /.col-lg-4 -->
+        <% start -= 1.day %>
     <% end %>
-    
-    
-
-    
 </div>

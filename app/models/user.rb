@@ -32,10 +32,6 @@ class User < ActiveRecord::Base
     subvice.purchases.where(created_at: date.beginning_of_day..date.end_of_day).sum('quantity')
   end
 
-  # def max_consumed(vice, date)
-  #   consumed(vice.subvice, date).max
-  # end
-
   def max_consumed_from_all_subvice(date)
     if purchases.where(created_at: date.beginning_of_day..date.end_of_day).present?
         list = purchases.where(created_at: date.beginning_of_day..date.end_of_day).select("subvices.name, (sum(purchases.quantity)) as q").group(:subvice_id, :name).order('q desc')

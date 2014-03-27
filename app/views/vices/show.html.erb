@@ -1,40 +1,64 @@
-<h2>Show Vice</h2>
+<div class="container">
+    <h2><%= @vice.name %></h2>
+    <span><%= link_to 'Delete Vice', @vice, method: :delete, data: { confirm: 'Are you sure?' } %></span>
 
-<p><%= @vice.name %></p>
-<%= link_to 'Back', vices_path %>
-<p><%= link_to 'Delete Vice', @vice, method: :delete, data: { confirm: 'Are you sure?' } %></p>
-
-    <%= column_chart @subvices.map{|subvice|
-        {name: subvice.name, data: subvice.purchases.group_by_day(:created_at).sum(:quantity)}
-    } %>
-
-    <%= line_chart @subvices.map{|subvice|
-        {name: subvice.name, data: subvice.purchases.group_by_day(:created_at).sum(:cost)}
-    } %>
-
-<% if @subvices.present? %>
-    <% @subvices.each do |subvice| %>
-    <ul>
-        <li><%= subvice.name %></li>
-        <li><%= distance_of_time_in_words(Time.now - current_user.last_time_consumed(subvice.id)) %> since last consumed</li>
-
-        <li>On track to achieve todays goal: <%= current_user.goal_achieved(subvice, Time.now) %></li>
-        <li>test goal: <%= current_user.goal_achieved(subvice, subvice.created_at) %></li>
-
-        <li>Would have spent - Actually spent $
-            <%= subvice.cost_per_day * current_user.days_since_subvice_created(subvice) - subvice.purchases.sum('cost') %></li>
-
-        <li>Would have consumed - Actually consumed 
-            <%= subvice.consumed_per_day * current_user.days_since_subvice_created(subvice) - subvice.purchases.sum('quantity') %></li>
-
-        <li><%= link_to 'add purchase', new_subvice_purchase_path(subvice) %></li>
-        <li><%= link_to 'edit sub category', edit_subvice_path(subvice) %></li>
-        <li><%= link_to 'Delete sub category', subvice, method: :delete, data: { confirm: 'Are you sure?' } %></li>
-    </ul>
+    <!-- Carousel
+    ================================================== -->
+    <div id="myCarousel" class="carousel slide" data-ride="carousel">
+      <!-- Indicators -->
+      <ol class="carousel-indicators">
+        <li data-target="#myCarousel" data-slide-to="0" class="active"></li>
+        <li data-target="#myCarousel" data-slide-to="1"></li>
+      </ol>
+      <div class="carousel-inner">
+        <div class="item active">
+            <%= column_chart @subvices.map{|subvice|
+                {name: subvice.name, data: subvice.purchases.group_by_day(:created_at).sum(:quantity)}
+            } %>
+        </div>
+        <div class="item ">
+            <%= line_chart @subvices.map{|subvice|
+                {name: subvice.name, data: subvice.purchases.group_by_day(:created_at).sum(:cost)}
+            } %>  
+        </div>
+        <div class="item ">
+            <%= area_chart @subvices.map{|subvice|
+                {name: subvice.name, data: subvice.purchases.group_by_day(:created_at).sum(:quantity)}
+            } %>  
+        </div>
+      </div>
+      <a class="left carousel-control" href="#myCarousel" data-slide="prev"><span class="glyphicon glyphicon-chevron-left"></span></a>
+      <a class="right carousel-control" href="#myCarousel" data-slide="next"><span class="glyphicon glyphicon-chevron-right"></span></a>
+    </div><!-- /.carousel -->    
     
+    <div><%= link_to 'Add Sub category', new_vice_subvice_path(@vice) %></div>
+    <% if @subvices.present? %>
+        <% @subvices.each do |subvice| %>
+            <div class="col-lg-4">
+                <ul>
+                    <li><div><h3><%= subvice.name %> -  </h3>
+                        <h4><%= link_to 'edit', edit_subvice_path(subvice) %></h4> : : 
+                        <h4><%= link_to 'delete', subvice, method: :delete, data: { confirm: 'Are you sure?' } %></h4>
+                    </div></li> 
+                    <li><%= link_to 'add purchase', new_subvice_purchase_path(subvice) %></li>
+                    <li><b>Time since last <% subvice.name %></b></li>
+                    <li><%= distance_of_time_in_words(Time.now - current_user.last_time_consumed(subvice.id)) %></li>
+                    <% if current_user.goal_achieved(subvice, Time.now) %>
+                        <li><span class="label label-success">On track to achieve goal today</span></li>
+                    <% else %>
+                        <li><span class="label label-danger">Did not achieve goal today</span></li>
+                    <% end %>
+                    <li><h4>Totals</h4></li>
+                    <li>Stated average minus actual spent </li>
+                    <li>$<%= subvice.cost_per_day * current_user.days_since_subvice_created(subvice) - subvice.purchases.sum('cost') %></li>
+                    <li>Stated average minus actual consumption </li>
+                    <li><%= subvice.consumed_per_day * current_user.days_since_subvice_created(subvice) - subvice.purchases.sum('quantity') %></li>
+                </ul>
+            </div><!-- /.col-lg-4 -->
+        <% end %>
     <% end %>
-<% end %>
+    
 
-<p><%= link_to 'Add Sub category', new_vice_subvice_path(@vice) %></p>
 
+</div>
 

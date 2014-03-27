@@ -83,4 +83,11 @@ class UserTest < ActiveSupport::TestCase
             subvice = FactoryGirl.create(:subvice)
         end
     end
+
+    context "max consumed" do
+        should "return, the max subvice consumed and amount" do
+            user = FactoryGirl.create(:user)
+            
+        end
+    end
 end

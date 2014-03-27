@@ -13,3 +13,21 @@
  */
 
  @import "bootstrap";
+
+
+ul {
+  list-style-type: none;
+}
+
+h3 {    
+    display: inline;
+}
+
+h4 {
+    display: inline;
+}
+
+.carousel-inner > .item {
+    width: 100%;
+    margin: 0 auto;
+}
