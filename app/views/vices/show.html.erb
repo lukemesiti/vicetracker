@@ -16,12 +16,12 @@
                 {name: subvice.name, data: subvice.purchases.group_by_day(:created_at).sum(:quantity)}
             } %>
         </div>
-        <div class="item ">
+        <div class="item">
             <%= line_chart @subvices.map{|subvice|
                 {name: subvice.name, data: subvice.purchases.group_by_day(:created_at).sum(:cost)}
             } %>  
         </div>
-        <div class="item ">
+        <div class="item">
             <%= area_chart @subvices.map{|subvice|
                 {name: subvice.name, data: subvice.purchases.group_by_day(:created_at).sum(:quantity)}
             } %>  

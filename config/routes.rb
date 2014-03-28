@@ -10,6 +10,8 @@ Vicetracker::Application.routes.draw do
     end
   end
 
+  get 'pages/about'
+  get 'pages/contact'
 
   root 'vices#index'
 
