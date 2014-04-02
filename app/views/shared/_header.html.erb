@@ -1,0 +1,48 @@
+    <div class="navbar-wrapper">
+      <div class="container">
+
+        <div class="navbar navbar-inverse navbar-static-top" role="navigation">
+          <div class="container">
+            <div class="navbar-header">
+              <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-collapse">
+                <span class="sr-only">Toggle navigation</span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+              </button>
+              <a class="navbar-brand" href="/">Vice Tracker</a>
+            </div>
+            <div class="navbar-collapse collapse">
+              <ul class="nav navbar-nav">
+                <li><%= link_to 'About', pages_about_path %></li>
+                <li><%= link_to 'Contact', pages_contact_path %></li>
+                
+                <% if user_signed_in? %>
+
+                <li class="dropdown">
+                  <a href="#" class="dropdown-toggle" data-toggle="dropdown">Vices <b class="caret"></b></a>
+                  <ul class="dropdown-menu">
+                    <li><%= link_to 'Add a Vice', new_vice_path %></li>
+                    <% current_user.vices.each do |v| %>
+                        <li><%= link_to v.name, v %></li>
+                    <% end %>
+                  </ul>
+                </li>
+
+                  <li class="dropdown">
+                    <a href="#" class="dropdown-toggle" data-toggle="dropdown"><%= current_user.email %> <b class="caret"></b></a>
+                    <ul class="dropdown-menu">
+                      <li><%= link_to 'Edit profile', edit_user_registration_path %></li>
+                      <li><%= link_to "Logout", destroy_user_session_path, :method => :delete %></li>
+                <% else %>
+                      <li><%= link_to "Sign up", new_user_registration_path %></li>
+                      <li><%= link_to "Login", new_user_session_path %></li>
+                <% end %>
+                    </ul>
+                  </li>
+              </ul>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>

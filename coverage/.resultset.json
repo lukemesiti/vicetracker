@@ -82,6 +82,7 @@
         1,
         null,
         1,
+        null,
         null
       ],
       "/Users/luke/Documents/Portfolio/WDI/vicetracker/app/helpers/application_helper.rb": [
@@ -124,6 +125,6 @@
         null
       ]
     },
-    "timestamp": 1395805973
+    "timestamp": 1395978381
   }
 }

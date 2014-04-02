@@ -1,27 +1,29 @@
-<%= form_for([@vice, @subvice]) do |f| %>
-    
-    <div class="field">
-        <%= f.label :name %>
-        <%= f.text_field :name, required: true %>
-    </div>
+<div class="container">
+    <%= form_for([@vice, @subvice]) do |f| %>
+        <h2 class="form-signin-heading">New Sub Category</h2>
+        
+        <div class="field">
+            <%= f.label :name %>
+            <%= f.text_field :name, required: true, :class => "form-control" %>
+        </div>
 
-    <div class="field">
-        <%= f.label :average_amount_consumed_per_day %>
-        <%= f.text_field :consumed_per_day %>
-    </div>
+        <div class="field">
+            <%= f.label :average_amount_consumed_per_day %>
+            <%= f.text_field :consumed_per_day, :class => "form-control" %>
+        </div>
 
-    <div class="field">
-        <%= f.label :average_cost_per_day %>
-        <%= f.text_field :cost_per_day %>
-    </div>
+        <div class="field">
+            <%= f.label :average_cost_per_day %>
+            <%= f.text_field :cost_per_day, :class => "form-control" %>
+        </div>
 
-    <div class="field">
-        <%= f.label :goal %>
-        <%= f.text_field :goal %>    
-    </div>
+        <div class="field">
+            <%= f.label :goal %>
+            <%= f.text_field :goal, :class => "form-control" %>    
+        </div><br />
 
-    <div class="actions">
-        <%= f.submit %>
-    </div>
-
-<% end %>
+        <div class="actions">
+            <%= f.submit "Create Sub Category", :class => "btn btn-lg btn-primary btn-block" %>
+        </div>
+    <% end %>
+</div>
