@@ -50,9 +50,9 @@
                     <% end %>
                     <li><h4>Totals</h4></li>
                     <li>Stated average minus actual spent </li>
-                    <li>$<%= subvice.cost_per_day * current_user.days_since_subvice_created(subvice) - subvice.purchases.sum('cost') %></li>
+                    <li>$<%= (subvice.cost_per_day * current_user.days_since_subvice_created(subvice) - subvice.purchases.sum('cost')).round(2) %></li>
                     <li>Stated average minus actual consumption </li>
-                    <li><%= subvice.consumed_per_day * current_user.days_since_subvice_created(subvice) - subvice.purchases.sum('quantity') %></li>
+                    <li><%= (subvice.consumed_per_day * current_user.days_since_subvice_created(subvice) - subvice.purchases.sum('quantity')).round(2) %></li>
                 </ul>
             </div><!-- /.col-lg-4 -->
         <% end %>

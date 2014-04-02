@@ -71,7 +71,7 @@ class User < ActiveRecord::Base
   end
 
   def days_since_subvice_created(subvice)
-    ((Time.now - subvice.created_at)/86400).round(2)
+    (Time.now - subvice.created_at)/86400
   end
 
   def would_have_spent_minus_actually_spent(subvice)
