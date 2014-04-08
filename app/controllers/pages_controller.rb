@@ -1,8 +1,13 @@
 class PagesController < ApplicationController
-  def about
-  end
+    skip_before_action :authenticate_user!
 
-  def contact
-  end
+    def home
+    end
+    
+    def about
+    end
+
+    def contact
+    end
 
 end

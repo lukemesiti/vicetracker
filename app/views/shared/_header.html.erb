@@ -10,10 +10,10 @@
                 <span class="icon-bar"></span>
                 <span class="icon-bar"></span>
               </button>
-              <a class="navbar-brand" href="/">Vice Tracker</a>
             </div>
             <div class="navbar-collapse collapse">
               <ul class="nav navbar-nav">
+                <li><%= link_to 'VICE TRACKER', pages_home_path %></li>
                 <li><%= link_to 'About', pages_about_path %></li>
                 <li><%= link_to 'Contact', pages_contact_path %></li>
                 
@@ -35,8 +35,7 @@
                       <li><%= link_to 'Edit profile', edit_user_registration_path %></li>
                       <li><%= link_to "Logout", destroy_user_session_path, :method => :delete %></li>
                 <% else %>
-                      <li><%= link_to "Sign up", new_user_registration_path %></li>
-                      <li><%= link_to "Login", new_user_session_path %></li>
+                      <li><%= link_to "SIGN IN", new_user_session_path %></li>
                 <% end %>
                     </ul>
                   </li>
