@@ -1,8 +1,9 @@
 <div class="container">
-  <div>Don't have an account? <%= link_to "Sign up here!", new_user_registration_path %></div>
+  <div class="jumbotron">
+    <div>Don't have an account? <%= link_to "Sign up here!", new_user_registration_path %></div>
   
     <%= form_for(resource, :as => resource_name, :url => session_path(resource_name), :html => { :class => "form-signin" } ) do |f| %>
-      <h2 class="form-signin-heading">Please sign in</h2>
+      <div class="heading">Please sign in</div>
       
       <div><%= f.label :email %><br />
       <%= f.email_field :email, :class => "form-control", :autofocus => true %></div>
@@ -15,5 +16,7 @@
       <% end -%>
 
       <div><%= f.submit "Sign in", :class => "btn btn-lg btn-primary btn-block" %></div>
-    <% end %>    
+    <% end %> 
+  </div>
+     
 </div>
