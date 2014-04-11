@@ -5,4 +5,10 @@ class ApplicationController < ActionController::Base
 
   before_filter :authenticate_user!
 
+  protected
+
+  def configure_permitted_parameters
+    devise_parameter_sanitizer.for(:sign_up) << :username # { |u| u.permit(:username, :email, :password, :password_confirmation) }
+  end
+
 end

@@ -9,6 +9,7 @@ class User < ActiveRecord::Base
   has_many :purchases, through: :subvices
 
   validates :email, presence: true, uniqueness: true
+  validates :username, presence: true, uniqueness: true
   validates :password, presence: true
 
   def last_time_consumed(subvice_id)

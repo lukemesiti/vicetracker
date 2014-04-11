@@ -1,9 +1,3 @@
-class AuthConstraint
-  def matches?(request)
-    request.session['user_id'].present?
-  end
-end
-
 Vicetracker::Application.routes.draw do
   
   devise_for :users
@@ -20,10 +14,9 @@ Vicetracker::Application.routes.draw do
   get 'pages/about'
   get 'pages/contact'
 
-  # constraints(AuthConstraint.new) do
-    # root :to => 'vices#index'
-  # end
+  authenticated :user do
+    root :to => 'vices#index', :as => "authenticated_root"
+  end
  
   root :to => 'pages#home'
-
 end
