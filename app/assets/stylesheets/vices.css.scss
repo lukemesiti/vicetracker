@@ -1,0 +1,20 @@
+.index-purchase {
+    background: #f5f5f5;
+    width: 500px;
+    margin: 20px auto;
+
+    .row {
+        font-weight: 200;
+        font-size: 2em;
+        height: 50px;
+        padding: 0 60px;
+    }
+
+    .column {
+        display: inline;
+    }
+
+    .right {
+        float: right;
+    }
+}
