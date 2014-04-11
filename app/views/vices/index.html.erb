@@ -1,45 +1,29 @@
 <div class="container">
-    <h2>Recent Activity</h2>
+    <div class="jumbotron">
+        <div class="heading"><%= current_user.username %> - Your Timeline</div>
+    </div>
 
-    <% start = 0.days.ago %>
-    <% finish = 7.days.ago %>
-    
-    <% while(start > finish) do %>
-        <div class="col-lg-4">
-            <ul>
-                <li>
-                    <h3><%= start.strftime("%A") %></h3>
-                </li>
-                <li><b>Goal Achieved for</b></li>
-                <% @vices.each do |vice| %>
-                    <li>
-                        <% vice.subvices.each do |subvice| %>
-                            <% if current_user.goal_achieved(subvice, Time.now) %>
-                            <span class="label label-success"><%= subvice.name %></span>
-                            <% end %>
-
-                        <% end %>
-                    </li>
-                <% end %>
-                <div>
-                    <li><b>Most consumed</b></li> 
-                    <% list = current_user.max_consumed_from_all_subvice(start) %>
-                    <% if list != 0 %>
-                        <% list.each do |x| %>
-                            <span class="badge"><%= x.q %> x <%= x.name %> </span>
-                        <% end %>
-                    <% end %>
-                </div>
-                <div>
-                    <li><b>Most spent</b></li> <% list = current_user.max_spent_from_all_subvice(start) %>
-                    <% if list != 0 %>
-                        <% list.each do |x| %>
-                            <span class="label label-danger">$<%= x.q %> on <%= x.name %></span>
-                        <% end %>
-                    <% end %>
-                </div>
-            </ul>
-        </div><!-- /.col-lg-4 -->
-        <% start -= 1.day %>
-    <% end %>
+    <div>
+        <% current_user.purchases.order("created_at DESC").each do |purchase| %>
+        <div class="index-purchase">
+            <div class="row">  
+                <div class="column"><%= purchase.subvice.vice.name %></div>
+                <div class="right column"><%= purchase.created_at.to_time.strftime('%B %e at %l:%M %p') %></div>
+            </div>
+            <div class="row">
+                <div class="column">Quantity</div>
+                <div class="right column">Cost</div>                   
+            </div>
+            <div class="row">
+                <div class="column"><%= purchase.quantity %></div>
+                <div class="right column">$<%= purchase.cost %></div>                    
+            </div>
+        </div>
+        <% end %>
+        <div class="index-purchase">
+            <div class="row">
+                You joined <%= current_user.created_at.to_time.strftime('%B %e at %l:%M %p') %>
+            </div>            
+        </div>
+    </div>
 </div>
