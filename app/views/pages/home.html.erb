@@ -49,17 +49,17 @@
 
 
     <div class="home-insentives">
-        <div class="heading" id="home-insentives-heading-left"><a href="#" id="how">How does Vice Tracker work?</a></div>
+        <div class="heading" id="home-insentives-heading-left"><a href="#" class="home-insentive-selected" id="how">How does Vice Tracker work?</a></div>
         <div class="heading" id="home-insentives-heading-right"><a href="#" id="why">Why should I use Vice Tracker?</a></div>
         <ul id="insentives-list-left">
-            <li>You have the desire to change</li>
             <li>Sign up. Make a commitment to diligently track your vice</li>
-            <li>VT will provide you with goals to achieve through your journey</li>
+            <li>Set goals to achieve through your journey</li>
+            <li>Measure your progress over time</li>
         </ul>
         <ul id="insentives-list-right">
             <li>See immediate cost savings</li>
-            <li>Over time see health benefits</li>
-            <li>Feel better about yourself by actively measuring your vice use</li>
+            <li>See health benefits over time</li>
+            <li>Feel better by actively measuring your vices</li>
         </ul>
     </div>
 </div>
@@ -75,13 +75,17 @@
 <script>
     $('#how').click(function(e) {
         e.preventDefault();
-        $('#insentives-list-right').css("display", "none")
+        $('#insentives-list-right').css("display", "none");
         $('#insentives-list-left').css("display", "inline")
+        $('#how').addClass("home-insentive-selected");
+        $('#why').removeClass("home-insentive-selected");
     });
     $('#why').click(function(e) {
         e.preventDefault();
-        $('#insentives-list-right').css("display", "inline")
-        $('#insentives-list-left').css("display", "none")
+        $('#insentives-list-right').css("display", "inline");
+        $('#insentives-list-left').css("display", "none");
+        $('#how').removeClass("home-insentive-selected");
+        $('#why').addClass("home-insentive-selected");
     });
 
 </script>
