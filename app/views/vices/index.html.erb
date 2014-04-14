@@ -7,16 +7,16 @@
         <% current_user.purchases.order("created_at DESC").each do |purchase| %>
         <div class="index-purchase">
             <div class="row">  
-                <div class="column"><%= purchase.subvice.vice.name %></div>
-                <div class="right column"><%= purchase.created_at.to_time.strftime('%B %e at %l:%M %p') %></div>
+                <div class="column vice-name"><%= purchase.subvice.vice.name %></div>
+                <div class="column"><%= purchase.created_at.to_time.strftime('%B %e at %l:%M %p') %></div>
             </div>
             <div class="row">
-                <div class="column">Quantity</div>
-                <div class="right column">Cost</div>                   
+                <div class="column-middle">Quantity</div>
+                <div class="column-middle">Cost</div>                   
             </div>
             <div class="row">
-                <div class="column"><%= purchase.quantity %></div>
-                <div class="right column">$<%= purchase.cost %></div>                    
+                <div class="column-bottom"><%= purchase.quantity %></div>
+                <div class="column-bottom">$<%= purchase.cost %></div>                    
             </div>
         </div>
         <% end %>
