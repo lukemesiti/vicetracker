@@ -1,14 +1,12 @@
 <div class="container">
         <div class="jumbotron">
-            <div class="get-started heading">Tracking your vices, made easy.</div>
+            <div class="get-started heading">Tracking your vices,<br /> made easy.</div>
             <div class="get-started"><%= link_to "Join, it's free", new_user_registration_path, :class => "btn btn-primary btn-large" %></div>
         </div>
-
-    
-
-
+</div>
     <!--  Carousel - consult the Twitter Bootstrap docs at 
       http://twitter.github.com/bootstrap/javascript.html#carousel -->
+
     <div id="home-slider" class="carousel slide" data-ride="carousel"><!-- class of slide for animation -->
       <!-- Indicators -->
       <ol class="carousel-indicators">
@@ -21,7 +19,7 @@
         <div class="item active"><!-- class of active since it's the first item -->
           <img src="http://placehold.it/1200x480" alt="" />
           <div class="carousel-caption">
-            <p>Vice Tracker - The easy way to stay on top.</p>
+            <p>The easy way to stay on top of things.</p>
           </div>
         </div>
         <div class="item">
@@ -33,55 +31,63 @@
         <div class="item">
           <img src="http://placehold.it/1200x480" alt="" />
           <div class="carousel-caption">
-            <p>Knowledge is power.</p>
+            <p>Make an informed assessment.</p>
           </div>
         </div>
       </div><!-- /.carousel-inner -->
       <!--  Next and Previous controls below
             href values must reference the id for this carousel -->
-        <a class="carousel-control left" href="#home-slider" data-slide="prev">
-            <!-- <span class="glyphicon glyphicon-chevron-left"></span> -->
-        </a>
-        <a class="carousel-control right" href="#home-slider" data-slide="next">
-            <!-- <span class="glyphicon glyphicon-chevron-right"></span> -->
-        </a>
-    </div><!-- /.carousel -->
+        <a class="carousel-control left" href="#home-slider" data-slide="prev"></a>
+        <a class="carousel-control right" href="#home-slider" data-slide="next"></a>
+    </div><!-- /.carousel --> 
 
-
+<div class="container">
     <div class="home-insentives">
-        <div class="heading" id="home-insentives-heading-left"><a href="#" id="how">How does Vice Tracker work?</a></div>
-        <div class="heading" id="home-insentives-heading-right"><a href="#" id="why">Why should I use Vice Tracker?</a></div>
+        <div class="sub-heading home-insentives-heading"><a href="#" class="home-insentive-selected" id="how">How does Vice Tracker work?</a></div>
+        <div class="sub-heading home-insentives-heading"><a href="#" id="why">Why should I use Vice Tracker?</a></div>
+    </div>
+    <div class="home-insentives-list">
         <ul id="insentives-list-left">
-            <li>You have the desire to change</li>
-            <li>Sign up. Make a commitment to diligently track your vice</li>
-            <li>VT will provide you with goals to achieve through your journey</li>
+            <li>Make a commitment to track your vice</li>
+            <li>Set goals to achieve through your journey</li>
+            <li>Measure your progress over time</li>
         </ul>
         <ul id="insentives-list-right">
             <li>See immediate cost savings</li>
-            <li>Over time see health benefits</li>
-            <li>Feel better about yourself by actively measuring your vice use</li>
+            <li>See health benefits over time</li>
+            <li>Feel better by actively measuring your vices</li>
         </ul>
     </div>
 </div>
 
-<div id="footer">
-    <div class="container">
-        <p>"It's easy to get swept into vice addiction in today's modern fast paced lifestyle. VICE TRACKER gives you the power and the knowledge to stay on top of your vice intake."</p>
-        <p>&copy; VICE TRACKER 2014</p>
-    </div>
+<div class="container">
+        <p id="foot">&copy; vice tracker 2014</p>
 </div>
 
-
 <script>
+
+    $('#insentives-list-right').hide();
     $('#how').click(function(e) {
         e.preventDefault();
-        $('#insentives-list-right').css("display", "none")
-        $('#insentives-list-left').css("display", "inline")
+        $('#insentives-list-right').hide();
+        $('#insentives-list-left').fadeIn("slow");
+        $('#how').addClass("home-insentive-selected");
+        $('#why').removeClass("home-insentive-selected");
     });
     $('#why').click(function(e) {
         e.preventDefault();
-        $('#insentives-list-right').css("display", "inline")
-        $('#insentives-list-left').css("display", "none")
+        $('#insentives-list-left').hide();
+        $('#insentives-list-right').fadeIn("slow");
+        $('#how').removeClass("home-insentive-selected");
+        $('#why').addClass("home-insentive-selected");
+    });
+
+    $( ".home-insentives-list > ul > li" ).mouseover( function() {
+        $(this).addClass('shadow');
+    });
+
+    $( ".home-insentives-list > ul > li" ).mouseout( function() {
+        $(this).removeClass('shadow');
     });
 
 </script>

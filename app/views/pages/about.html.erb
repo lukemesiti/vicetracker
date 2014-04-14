@@ -1,21 +1,54 @@
 <div class="container">
     <div class="jumbotron">
-            <div class="heading" id="about">ABOUT</div>
+            <div class="heading">ABOUT</div>
     </div>
-
-    <div>
-        <div class="heading">How does Vice Tracker work?</div>
-        <ul class="about-insentives">
-            <li>You have the desire to change</li>
-            <li>Sign up. Make a commitment to diligently track your vice</li>
-            <li>VT will provide you with goals to achieve through your journey</li>
-        </ul>
-
-        <div class="heading">Why should I use Vice Tracker?</a></div>
-        <ul class="about-insentives">
-            <li>See immediate cost savings</li>
-            <li>Over time see health benefits</li>
-            <li>Feel better about yourself by actively measuring your vice use</li>
-        </ul>
+    <div class="container">
+        <div class="about-insentives">
+            <div class="sub-heading about-insentives-heading"><a href="#" class="about-insentive-selected" id="how">How does Vice Tracker work?</a></div>
+            <div class="sub-heading about-insentives-heading"><a href="#" id="why">Why should I use Vice Tracker?</a></div>
+        </div>
+        <div class="about-insentives-list">
+            <ul id="insentives-list-left">
+                <li>Make a commitment to track your vice</li>
+                <li>Set goals to achieve through your journey</li>
+                <li>Measure your progress over time</li>
+            </ul>
+            <ul id="insentives-list-right">
+                <li>See immediate cost savings</li>
+                <li>See health benefits over time</li>
+                <li>Feel better by actively measuring your vices</li>
+            </ul>
+        </div>
     </div>
 </div>
+
+
+<script>
+
+    $('#insentives-list-right').hide();
+    $('#how').click(function(e) {
+        e.preventDefault();
+        $('#insentives-list-right').hide();
+        $('#insentives-list-left').fadeIn("slow");
+        $('#how').addClass("about-insentive-selected");
+        $('#why').removeClass("about-insentive-selected");
+    });
+    $('#why').click(function(e) {
+        e.preventDefault();
+        $('#insentives-list-left').hide();
+        $('#insentives-list-right').fadeIn("slow");
+        $('#how').removeClass("about-insentive-selected");
+        $('#why').addClass("about-insentive-selected");
+    });
+
+
+
+    $( ".about-insentives-list > ul > li" ).mouseover( function() {
+        $(this).addClass('upsize');
+    });
+
+    $( ".about-insentives-list > ul > li" ).mouseout( function() {
+        $(this).removeClass('upsize');
+    });
+
+</script>

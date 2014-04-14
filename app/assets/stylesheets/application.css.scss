@@ -14,21 +14,24 @@
 
  @import "bootstrap";
 
+.container-max {
+    min-width: 100%;
+}
+
 body {
     font-family: 'Roboto', sans-serif;
     font-weight: 300;
+    font-size: 18px;
 }
 
 .heading {
-    font-weight: 300;
-    font-size: 2.5em;
+    font-weight: 200;
+    font-size: 50px;
 }
 
-
-
-
-ul {
-  list-style-type: none;
+.sub-heading {
+    font-weight: 200;
+    font-size: 35px;
 }
 
 h3 {    
@@ -39,7 +42,3 @@ h4 {
     display: inline;
 }
 
-.carousel-inner > .item {
-    min-width: 100%;
-    margin: 0 auto;
-}
