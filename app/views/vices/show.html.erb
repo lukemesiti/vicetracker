@@ -3,6 +3,7 @@
         <div class="heading"><%= @vice.name %></div>
         <span><%= link_to 'Delete Vice', @vice, method: :delete, data: { confirm: 'Are you sure?' } %></span>
     </div>
+    <div>Amount consumed per day</div>
     <div>
         <%= column_chart @subvices.map{|subvice|
         {name: subvice.name, data: subvice.purchases.group_by_day(:created_at).sum(:quantity)}
@@ -17,18 +18,14 @@
 
     <% if @subvices.present? %>
         <% @subvices.each do |subvice| %>
-            <div class="show-subvice">
-                <div>
-                    <%= subvice.name %>
+            <div class="index-purchase">
+                <div class="row">
+                    <div class="column vice-name"><%= subvice.name %></div>
+                    <div class="column"><%= link_to 'edit', edit_subvice_path(subvice) %></div>
+                    <div class="column"><%= link_to 'delete', subvice, method: :delete, data: { confirm: 'Are you sure?' } %></div>
                 </div>
-                <div>
-                    <%= link_to 'edit', edit_subvice_path(subvice) %>
-                </div>
-                <div>
-                    <%= link_to 'delete', subvice, method: :delete, data: { confirm: 'Are you sure?' } %>
-                </div>
-                <div>
-                    <%= link_to 'add purchase', new_subvice_purchase_path(subvice) %>
+                <div class="row">
+                    <div class="column"><%= link_to 'add purchase', new_subvice_purchase_path(subvice) %></div>
                 </div>
                 <div>
                     <%= distance_of_time_in_words(Time.now - current_user.last_time_consumed(subvice.id)) %> since your last <%= subvice.name %>
