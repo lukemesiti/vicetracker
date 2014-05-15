@@ -66,6 +66,7 @@
 
         .step-number {
             display: inline-block;
+            margin: 15px;
             border: 2px solid black;
             border-radius: 50%;
             height: 40px;
@@ -78,6 +79,8 @@
           -webkit-transform: scale(1.2);
           -ms-transform: scale(1.2);
           transform: scale(1.2);
+          color: rgb(66, 139, 202);
+          border-color: rgb(66, 139, 202);
         }
 
         .step-description {
@@ -92,14 +95,14 @@
             border-radius: 10px; /* future proofing */
             -khtml-border-radius: 10px; /* for old Konqueror browsers */
 
-            transition: box-shadow .15s ease-in-out;
-            -moz-transition: box-shadow .15s ease-in-out;
-            -webkit-transition: box-shadow .15s ease-in-out;
+            transition: box-shadow .2s ease-in-out;
+            -moz-transition: box-shadow .2s ease-in-out;
+            -webkit-transition: box-shadow .2s ease-in-out;
         }
     }
 
     .shadow {
-        box-shadow: 10px 10px 5px #888;
+        box-shadow: 0 0 15px 2px #bababa;
     }
 }
 
