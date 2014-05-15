@@ -109,6 +109,14 @@
             box-shadow: 0 0 15px 2px #bababa;
             background-color: #fff;
         }
+        
+        .icon {
+            display: inline-block;
+            margin: 15px;
+            height: 40px;
+            width: 40px;
+            transition: 0.1s ease-in-out;
+        }
     }
 
     .shadow {
