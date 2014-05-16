@@ -1,4 +1,4 @@
-.signup-box {
+.sign-box {
     max-width: 500px;
 
     .heading {
@@ -6,8 +6,11 @@
     }
 
     .form-control {
-        margin: 0 0 15px 0;
         height: 40px;
         font-size: 20px;
+    }
+
+    div {
+        margin: 0 0 15px 0;
     }
 }
