@@ -1,22 +1,21 @@
 <div class="container">
-  <div class="jumbotron">
-    <div>Don't have an account? <%= link_to "Sign up here!", new_user_registration_path %></div>
+  <div class="jumbotron sign-box">
   
-    <%= form_for(resource, :as => resource_name, :url => session_path(resource_name), :html => { :class => "form-signin" } ) do |f| %>
-      <div class="heading">Please sign in</div>
+    <%= form_for(resource, :as => resource_name, :url => session_path(resource_name)) do |f| %>
+      <div class="heading">Sign in</div>
       
-      <div><%= f.label :username %><br />
-      <%= f.text_field :username, :class => "form-control", :autofocus => true %></div>
+      <div><%= f.text_field :username, required: true, placeholder: 'Username', :class => "form-control", :autofocus => true %></div>
 
-      <div><%= f.label :password %><br />
-      <%= f.password_field :password, :class => "form-control" %></div>
+      <div><%= f.password_field :password, required: true, placeholder: 'Password', :class => "form-control" %></div>
 
-      <% if devise_mapping.rememberable? -%>
+      <% if devise_mapping.rememberable? %>
         <div><%= f.check_box :remember_me %> <%= f.label :remember_me %></div>
       <% end -%>
 
-      <div><%= f.submit "Sign in", :class => "btn btn-lg btn-primary btn-block" %></div>
+      <div><%= f.submit "Sign in", :class => "btn btn-lg btn-primary" %></div>
     <% end %> 
+
+    <div>Don't have an account? <%= link_to "Sign up here!", new_user_registration_path %></div>
   </div>
      
 </div>
