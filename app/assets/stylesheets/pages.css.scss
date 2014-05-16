@@ -141,7 +141,7 @@
             margin: 15px;
             height: 40px;
             width: 40px;
-            transition: 0.1s ease-in-out;
+            transition: all 0.1s ease-in-out;
         }
 
         .money {
@@ -154,12 +154,6 @@
 
         .track {
             fill: orange;
-        }
-
-        .
-            -webkit-transform: scale(1.2);
-            -ms-transform: scale(1.2);
-            transform: scale(1.2);
         }
     }
 
