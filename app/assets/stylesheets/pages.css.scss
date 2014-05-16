@@ -169,81 +169,38 @@
     text-align: center;
 }
 
+//---------------------------------------------------------------------
+// Contact Page
+//---------------------------------------------------------------------
 
-//----------------------------------------------------------------------------------
-//about
-//----------------------------------------------------------------------------------
 
+.contact-box {
+    max-width: 600px;
 
-.about-insentives {
-    margin: 20px 0;
-    text-align: center;
-
-    a {
-        color: #bababa;
-        transition: color .25s ease-in-out;
-        -moz-transition: color .25s ease-in-out;
-        -webkit-transition: color .25s ease-in-out;
+    .heading {
+        margin: 0 0 15px 0;
     }
 
-    a:hover {
-        text-decoration: none;
-        color: black;
-    }
-
-    .about-insentive-selected {
-        color: black;
-        border-bottom: 2px solid black;
-    }
-
-    .about-insentives-heading {
+    .form-control {
         display: inline-block;
-        padding: 0 10px;
-    }
-}
-
-.about-insentives-list {
-    text-align: center;
-
-    ul {
-        list-style-type: none;
-        padding: 10px;
+        float: left;
+        height: 40px;
+        font-size: 20px;
+        margin: 0 15px 15px 0;
     }
 
-    li {
+    .name {
         width: 200px;
+    }
+
+    .email {
+        width: 415px;
+    }
+
+    .message {
+        width: 415px;
         height: 150px;
-        padding: 40px 10px;
-        margin: 10px 50px;
-        display: inline-block;
-        border: 2px solid black;
-        -moz-border-radius: 10px;
-        -webkit-border-radius: 10px;
-        border-radius: 10px; /* future proofing */
-        -khtml-border-radius: 10px; /* for old Konqueror browsers */
-
-        transition: height .25s ease-in-out;
-        -moz-transition: height .25s ease-in-out;
-        -webkit-transition: height .25s ease-in-out;
-
-        transition: width .25s ease-in-out;
-        -moz-transition: width .25s ease-in-out;
-        -webkit-transition: width .25s ease-in-out;
-
-        transition: box-shadow .25s ease-in-out;
-        -moz-transition: box-shadow .25s ease-in-out;
-        -webkit-transition: box-shadow .25s ease-in-out;
-
-
     }
-
-    .upsize {
-        height: 190px;
-        width: 240px;
-        padding: 60px 10px;
-        box-shadow: 10px 10px 15px 5px #888;
-    }
-
 }
 
 
