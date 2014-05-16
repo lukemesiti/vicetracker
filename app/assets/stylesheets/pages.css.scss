@@ -170,10 +170,38 @@
 }
 
 //---------------------------------------------------------------------
+// Contact Page
 //---------------------------------------------------------------------
 
 
+.contact-box {
+    max-width: 600px;
 
+    .heading {
+        margin: 0 0 15px 0;
+    }
+
+    .form-control {
+        display: inline-block;
+        float: left;
+        height: 40px;
+        font-size: 20px;
+        margin: 0 15px 15px 0;
+    }
+
+    .name {
+        width: 200px;
+    }
+
+    .email {
+        width: 415px;
+    }
+
+    .message {
+        width: 415px;
+        height: 150px;
+    }
+}
 
 
 
