@@ -64,7 +64,7 @@
 
         display: inline-block;
 
-        .step-number {
+        .why-number {
             display: inline-block;
             margin: 15px;
             color: rgb(66, 139, 202);
@@ -76,7 +76,7 @@
             transition: 0.1s ease-in-out;
         }
 
-        .step-number-grow {
+        .why-number-grow {
           -webkit-transform: scale(1.2);
           -ms-transform: scale(1.2);
           transform: scale(1.2);
@@ -84,7 +84,7 @@
           color: #fff;
         }
 
-        .step-description {
+        .why-description {
             width: 200px;
             height: 150px;
             padding: 40px 10px;
@@ -105,17 +105,61 @@
                         background-color .2s ease-in-out;
 
         }
-        .step-description:hover {
+        .why-description:hover {
             box-shadow: 0 0 15px 2px #bababa;
             background-color: #fff;
         }
-        
+
+        .how-description {
+            width: 200px;
+            height: 150px;
+            padding: 40px 10px;
+            margin: 10px 50px;
+            display: block;
+            background-color: #e9e9e9;
+            border: 2px solid black;
+            -moz-border-radius: 10px;
+            -webkit-border-radius: 10px;
+            border-radius: 10px; /* future proofing */
+            -khtml-border-radius: 10px; /* for old Konqueror browsers */
+
+            transition: box-shadow .2s ease-in-out,
+                        background-color .2s ease-in-out;
+            -moz-transition: box-shadow .2s ease-in-out,
+                        background-color .2s ease-in-out;
+            -webkit-transition: box-shadow .2s ease-in-out,
+                        background-color .2s ease-in-out;
+
+        }
+        .how-description:hover {
+            box-shadow: 0 0 15px 2px #bababa;
+            background-color: #fff;
+        }
+
         .icon {
             display: inline-block;
             margin: 15px;
             height: 40px;
             width: 40px;
             transition: 0.1s ease-in-out;
+        }
+
+        .money {
+            fill: green;
+        }
+
+        .health {
+            fill: red;
+        }
+
+        .track {
+            fill: orange;
+        }
+
+        .
+            -webkit-transform: scale(1.2);
+            -ms-transform: scale(1.2);
+            transform: scale(1.2);
         }
     }
 
