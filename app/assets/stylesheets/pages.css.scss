@@ -208,9 +208,34 @@
 // About Page
 //---------------------------------------------------------------------
 
-img.bird {
+img.smokes {
     position: absolute;
     opacity:0;
+    height: 150px;
+    -moz-transition: opacity 2s ease-in 2s; /* Firefox 4 */
+    -webkit-transition: opacity 2s ease-in 2s; /* Safari and Chrome */
+    -o-transition: opacity 2s ease-in 2s;
+    transition: opacity 2s ease-in 2s;
+}
+
+img.beer {
+    position: absolute;
+    opacity:0;
+    height: 150px;
+    left: 200px;
+    top: 300px;
+    -moz-transition: opacity 2s ease-in 2s; /* Firefox 4 */
+    -webkit-transition: opacity 2s ease-in 2s; /* Safari and Chrome */
+    -o-transition: opacity 2s ease-in 2s;
+    transition: opacity 2s ease-in 2s;
+}
+
+img.food {
+    position: absolute;
+    opacity:0;
+    height: 150px;
+    left: 400px;
+    top: 500px;
     -moz-transition: opacity 2s ease-in 2s; /* Firefox 4 */
     -webkit-transition: opacity 2s ease-in 2s; /* Safari and Chrome */
     -o-transition: opacity 2s ease-in 2s;
@@ -224,9 +249,9 @@ img.bird {
     height: 100px;
     background-color: #e9e9e9;
     border: 2px solid black;
-    -moz-border-radius: 50%;
-    -webkit-border-radius: 50%;
-    border-radius: 50%; 
+    -moz-border-radius: 10px;
+    -webkit-border-radius: 10px;
+    border-radius: 10px; 
     -webkit-animation: slidein 0.5s forwards;
     -moz-animation: slidein 0.5s forwards;
 }
