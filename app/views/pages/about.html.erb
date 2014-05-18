@@ -3,17 +3,33 @@
         <div class="heading" id="about">About</div>
     </div>
 
-    <img class="smokes" onload="this.style.opacity='1';" src="http://smokeforwhat.com/img/no_smoking_signs/cigarette-smash.jpg" />
+    <img class="smokes fade-in" onload="this.style.opacity='1';" src="http://smokeforwhat.com/img/no_smoking_signs/cigarette-smash.jpg" />
 
-    <img class="beer" onload="this.style.opacity='1'.delay(1);" src="http://www.scientificamerican.com/sciam/cache/file/BCEF876F-3D0B-4AB4-85DA1CE566DA2DA8.jpg" />
+    <img class="beer fade-in" onload="this.style.opacity='1';" src="http://www.scientificamerican.com/sciam/cache/file/BCEF876F-3D0B-4AB4-85DA1CE566DA2DA8.jpg" />
 
-    <img class="food" onload="this.style.opacity='1'.delay(2);" src="http://www.med-health.net/images/10404920/image001.jpg" />
+    <img class="food fade-in" onload="this.style.opacity='1';" src="http://www.med-health.net/images/10404920/image001.jpg" />
     
     <div class="about one">Make a commitment to track your vice</div>
     <div class="about two">Set goals to achieve through your journey</div>
     <div class="about three">Measure your progress over time</div>    
 
-    
 </div>
 
+<script>
+    $('.one').hide();
+    $('.two').hide();
+    $('.three').hide();
 
+    $('.smokes').hover( function() {
+        $('.one').fadeIn('slow');
+    });
+
+    $('.beer').hover( function() {
+        $('.two').fadeIn('slow');
+    });
+
+    $('.food').hover( function() {
+        $('.three').fadeIn('slow');
+    });        
+
+</script>

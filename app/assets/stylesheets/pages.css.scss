@@ -208,84 +208,48 @@
 // About Page
 //---------------------------------------------------------------------
 
-img.smokes {
+.fade-in {
     position: absolute;
     opacity:0;
-    height: 150px;
-    -moz-transition: opacity 2s ease-in 2s; /* Firefox 4 */
-    -webkit-transition: opacity 2s ease-in 2s; /* Safari and Chrome */
-    -o-transition: opacity 2s ease-in 2s;
-    transition: opacity 2s ease-in 2s;
+    -moz-transition: opacity 1s ease-in;
+    -webkit-transition: opacity 1s ease-in; 
+    transition: opacity 2s ease-in;    
 }
 
-img.beer {
-    position: absolute;
-    opacity:0;
-    height: 150px;
-    left: 200px;
+.smokes {
+    height: 250px;
+    left: 250px;
     top: 300px;
-    -moz-transition: opacity 2s ease-in 2s; /* Firefox 4 */
-    -webkit-transition: opacity 2s ease-in 2s; /* Safari and Chrome */
-    -o-transition: opacity 2s ease-in 2s;
-    transition: opacity 2s ease-in 2s;
 }
 
-img.food {
-    position: absolute;
-    opacity:0;
-    height: 150px;
-    left: 400px;
-    top: 500px;
-    -moz-transition: opacity 2s ease-in 2s; /* Firefox 4 */
-    -webkit-transition: opacity 2s ease-in 2s; /* Safari and Chrome */
-    -o-transition: opacity 2s ease-in 2s;
-    transition: opacity 2s ease-in 2s;
+.beer {
+    height: 250px;
+    left: 520px;
+    top: 300px;
+}
+
+.food {
+    height: 300px;
+    left: 800px;
+    top: 250px;
 }
 
 .about {
     position: absolute;
-    left: -350px;
-    width: 100px;
+    top: 600px;
+    left: 250px;
+    width: 200px;
     height: 100px;
-    background-color: #e9e9e9;
-    border: 2px solid black;
-    -moz-border-radius: 10px;
-    -webkit-border-radius: 10px;
-    border-radius: 10px; 
-    -webkit-animation: slidein 0.5s forwards;
-    -moz-animation: slidein 0.5s forwards;
+    text-align: center;
 }
 
 .two {
-    top: 400px;
-    -moz-animation-delay: 1s;
-    -webkit-animation-delay: 1s;
+    left: 550px;
 }
 
 .three {
-    top: 550px;
-    -moz-animation-delay: 2s;
-    -webkit-animation-delay: 2s;
+    left: 950px;
 }
 
-@-moz-keyframes slidein {
-    from {
-        margin-left:-100%;
-    }
-
-    to {
-        margin-left:100%;
-    }
-}
-
-@-webkit-keyframes slidein {
-    from {
-        margin-left:-100%;
-    }
-
-    to {
-        margin-left:100%;
-    }
-}
 
 
