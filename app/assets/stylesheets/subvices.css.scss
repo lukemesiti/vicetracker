@@ -1,0 +1,15 @@
+.form-container {
+    max-width: 600px;
+
+    .heading {
+        margin: 0 0 15px 0;
+    }
+
+    .form-control {
+        display: inline-block;
+        float: left;
+        height: 40px;
+        font-size: 20px;
+        margin: 0 15px 15px 0;
+    }
+}
