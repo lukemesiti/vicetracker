@@ -5,6 +5,8 @@ class Purchase < ActiveRecord::Base
     validates :cost, presence: true
     validates :subvice_id, presence: true
 
-  
+    def group_by_criteria
+        created_at.to_date.to_s(:db)
+    end  
 
 end
