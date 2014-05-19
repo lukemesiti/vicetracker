@@ -1,16 +1,19 @@
-<%= form_for([@subvice, @purchase]) do |f| %>
-    
-    <div class="field">
-        <%= f.label :quantity %>
-        <%= f.text_field :quantity, required: true %>
-    </div>
+<div class="container">
+    <div class="jumbotron form-container">
+        <div class="heading" id="contact">Add Purchase</div>
 
-    <div class="field">
-        <%= f.label :cost %>
-        <%= f.text_field :cost, required: true %>
-    </div>
+        <%= form_for([@subvice, @purchase]) do |f| %>    
+            <div class="field">
+                <%= f.text_field :quantity, required: true, placeholder: 'Quantity', class: 'form-control' %>
+            </div>
 
-    <div class="actions">
-        <%= f.submit %>
+            <div class="field">
+                <%= f.text_field :cost, required: true, placeholder: 'Cost', class: 'form-control' %>
+            </div>
+
+            <div class="actions">
+                <%= f.submit 'Create Purchase', class: 'btn btn-lg btn-primary' %>
+            </div>
+        <% end %>
     </div>
-<% end %>
+</div>
