@@ -5,51 +5,25 @@
 
     <div>
         <% current_user.purchases.order("created_at DESC").group_by(&:group_by_criteria).each do |k,v| %></div>
-        <div class="list-dates"><%= k.to_time.strftime('%B %e') %></div>
-        <div>
+            <a href="#<%=k%>" class="head"><%= k.to_time.strftime('%B %e') %></a>
             <% v.each do |x| %>
-                <div class="list-purchases">
-                    name = <%= x.subvice.vice.name %>
-                    quantity = <%= x.quantity %>
-                    cost = <%= x.cost %>
-                </div> 
+                <ul id="<%=k%>" class="content">
+                    <li>name = <%= x.subvice.vice.name %></li>
+                    <li>quantity = <%= x.quantity %></li>
+                    <li>cost = <%= x.cost %></li>
+                </ul>
             <% end %>
-        </div>
         <% end %>
 
-    <div>
-        <% current_user.purchases.order("created_at DESC").each do |purchase| %>
-        <div class="index-purchase">
-            <div class="row">  
-                <div class="column vice-name"><%= purchase.subvice.vice.name %></div>
-                <div class="column"><%= purchase.created_at.to_time.strftime('%B %e at %l:%M %p') %></div>
-                <div class="column"><%= purchase.created_at.to_time.strftime('%B %e') %></div>
-            </div>
-            <div class="row">
-                <div class="column-middle">Quantity</div>
-                <div class="column-middle">Cost</div>                   
-            </div>
-            <div class="row">
-                <div class="column-bottom"><%= purchase.quantity %></div>
-                <div class="column-bottom">$<%= purchase.cost %></div>                    
-            </div>
-        </div>
-        <% end %>
-        <div class="index-purchase">
-            <div class="row">
-                You joined <%= current_user.created_at.to_time.strftime('%B %e at %l:%M %p') %>
-            </div>            
-        </div>
-    </div>
 </div>
 
-<script>
+    <script type="text/javascript">
+        $(document).ready(function() {
+            $('.head').click(function(e){
+                e.preventDefault();
+                $(this).closest('li').find('.content').not(':animated').slideToggle();
+            });
+        });
+    </script>
 
-    $('.list-dates').click(function () {
-        $('.list-purchases').show(); 
-    });
-    $('.list-dates').mouseout(function () {
-        $(this).next().slideUp(); 
-    });
-</script>
 
