@@ -8,11 +8,16 @@
             <ul>
                 <li>
                     <a href="#<%=k%>" class="head"><%= k.to_time.strftime('%B %e') %></a>
+                    <ul id="<%=k%>" class="content">
                     <% v.each do |x| %>
-                        <ul id="<%=k%>" class="content">
-                            <li><%= x.quantity %> (<%= x.subvice.name %>) x $<%= x.cost %> <%= x.created_at.to_time.strftime('at %l:%M %p') %></li>
-                        </ul>
+                        <li>
+                            <%= x.quantity %> 
+                            (<%= x.subvice.name %>) x 
+                            $<%= x.cost %> 
+                            <%= x.created_at.to_time.strftime('at %l:%M %p') %>
+                        </li>
                     <% end %>
+                    </ul>
                 </li>
             </ul>
         <% end %>
@@ -28,7 +33,7 @@
             $('.head').click(function(e){
                 e.preventDefault();
                 console.log(this);
-                $(this).closest('li').find('.content').slideToggle();
+                $(this).closest('li').find('.content').not(':animated').slideToggle();
             });
         });
     </script>
