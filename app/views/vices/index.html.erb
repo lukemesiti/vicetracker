@@ -1,19 +1,25 @@
 <div class="container">
     <div class="jumbotron">
-        <div class="heading"><%= current_user.username %> - Your Timeline</div>
+        <div class="heading"><%= current_user.username %>, Your Timeline</div>
     </div>
 
     <div>
-        <% current_user.purchases.order("created_at DESC").group_by(&:group_by_criteria).each do |k,v| %></div>
-            <a href="#<%=k%>" class="head"><%= k.to_time.strftime('%B %e') %></a>
-            <% v.each do |x| %>
-                <ul id="<%=k%>" class="content">
-                    <li>name = <%= x.subvice.vice.name %></li>
-                    <li>quantity = <%= x.quantity %></li>
-                    <li>cost = <%= x.cost %></li>
-                </ul>
-            <% end %>
+        <% current_user.purchases.order("created_at DESC").group_by(&:group_by_criteria).each do |k,v| %>
+            <ul>
+                <li>
+                    <a href="#<%=k%>" class="head"><%= k.to_time.strftime('%B %e') %></a>
+                    <% v.each do |x| %>
+                        <ul id="<%=k%>" class="content">
+                            <li><%= x.quantity %> (<%= x.subvice.name %>) x $<%= x.cost %> <%= x.created_at.to_time.strftime('at %l:%M %p') %></li>
+                        </ul>
+                    <% end %>
+                </li>
+            </ul>
         <% end %>
+        <ul>
+            <li>You joined <%= current_user.created_at.to_time.strftime('%B %e at %l:%M %p') %></li>
+        </ul>
+    </div>
 
 </div>
 
@@ -21,7 +27,8 @@
         $(document).ready(function() {
             $('.head').click(function(e){
                 e.preventDefault();
-                $(this).closest('li').find('.content').not(':animated').slideToggle();
+                console.log(this);
+                $(this).closest('li').find('.content').slideToggle();
             });
         });
     </script>
