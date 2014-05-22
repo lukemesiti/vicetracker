@@ -3,24 +3,29 @@
         <div class="heading"><%= current_user.username %>, Your Timeline</div>
     </div>
 
-    <div>
+    <div class="timeline">
+        <ul>
         <% current_user.purchases.order("created_at DESC").group_by(&:group_by_criteria).each do |k,v| %>
-            <ul>
-                <li>
+        
+            <li class="timeline-item">
+                <div class="date">
                     <a href="#<%=k%>" class="head"><%= k.to_time.strftime('%B %e') %></a>
-                    <ul id="<%=k%>" class="content">
-                    <% v.each do |x| %>
-                        <li>
-                            <%= x.quantity %> 
-                            (<%= x.subvice.name %>) x 
-                            $<%= x.cost %> 
-                            <%= x.created_at.to_time.strftime('at %l:%M %p') %>
-                        </li>
-                    <% end %>
-                    </ul>
-                </li>
-            </ul>
+                    <span class="marker"><span class="dot"></span></span>
+                </div>
+                <ul id="<%=k%>" class="content info">
+                <% v.each do |x| %>
+                    <li>
+                        <%= x.quantity %> 
+                        (<%= x.subvice.name %>) x 
+                        $<%= x.cost %> 
+                        <%= x.created_at.to_time.strftime('at %l:%M %p') %>
+                    </li>
+                <% end %>
+                </ul>
+            </li>
+        
         <% end %>
+        </ul>
         <ul>
             <li>You joined <%= current_user.created_at.to_time.strftime('%B %e at %l:%M %p') %></li>
         </ul>
@@ -37,5 +42,3 @@
             });
         });
     </script>
-
-
