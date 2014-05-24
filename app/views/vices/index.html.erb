@@ -7,7 +7,7 @@
         <ul class="timeline">
         <% current_user.purchases.order("created_at DESC").group_by(&:group_by_criteria).each do |k,v| %>
             <li>
-                <div class="timeline-date">
+                <div class="date">
                     <a href="#<%=k%>" class="head"><%= k.to_time.strftime('%B %e') %></a>
                     <span class="marker"></span>
                 </div>
