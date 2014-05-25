@@ -16,7 +16,7 @@
                         <% v.each do |x| %>
                             <li>
                                 <%= x.quantity %> 
-                                (<%= x.subvice.name %>) x 
+                                (<%= x.subvice.name %>) totalling 
                                 $<%= x.cost %> 
                                 <%= x.created_at.to_time.strftime('at %l:%M %p') %>
                             </li>
@@ -27,7 +27,10 @@
         <% end %>
         </ul>
         <ul class="timeline">
-            <li>You joined <%= current_user.created_at.to_time.strftime('%B %e at %l:%M %p') %></li>
+            <div class="date">
+                <li>You joined <%= current_user.created_at.to_time.strftime('%B %e at %l:%M %p') %></li>
+            </div>
+            
         </ul>
     </div>
 
