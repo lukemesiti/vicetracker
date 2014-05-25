@@ -68,10 +68,11 @@
 .timeline {
     list-style-type: none;
     max-width: 100%;
+    padding: 0;
 
     .date {
         display: block;
-        margin: 0 50% 0 20%;
+        margin: 0 500px 0 200px;
         padding: 20px 20px 20px 120px;
         text-align: center;
         border-right: 2px solid #aaa;
@@ -93,8 +94,8 @@
 
     .info {
         display: block;
-        margin: 0 50% 0 20%;
-        padding: 20px 20px 20px 120px;
+        margin: 0 500px 0 200px;
+        padding: 20px 120px 20px 20px;
         text-align: center;
         border-right: 2px solid #aaa;
     }
