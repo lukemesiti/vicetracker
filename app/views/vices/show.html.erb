@@ -1,7 +1,7 @@
 <div class="container">
     <div class="jumbotron">
         <div class="heading"><%= @vice.name %></div>
-        <span><%= link_to 'Delete Vice', @vice, method: :delete, data: { confirm: 'Are you sure?' } %></span>
+        <span><%= link_to 'Remove Vice', @vice, method: :delete, data: { confirm: 'Are you sure?' } %></span>
     </div>
     <div>Amount consumed per day</div>
     <div>
@@ -21,11 +21,11 @@
             <div class="index-purchase">
                 <div class="row">
                     <div class="column vice-name"><%= subvice.name %></div>
-                    <div class="column"><%= link_to 'edit', edit_subvice_path(subvice) %></div>
-                    <div class="column"><%= link_to 'delete', subvice, method: :delete, data: { confirm: 'Are you sure?' } %></div>
+                    <div class="column"><%= link_to 'Edit', edit_subvice_path(subvice) %></div>
+                    <div class="column"><%= link_to 'Remove', subvice, method: :delete, data: { confirm: 'Are you sure?' } %></div>
                 </div>
                 <div class="row">
-                    <div class="column"><%= link_to 'add purchase', new_subvice_purchase_path(subvice) %></div>
+                    <div class="column"><%= link_to 'Add Purchase', new_subvice_purchase_path(subvice) %></div>
                 </div>
                 <div>
                     <%= distance_of_time_in_words(Time.now - current_user.last_time_consumed(subvice.id)) %> since your last <%= subvice.name %>
