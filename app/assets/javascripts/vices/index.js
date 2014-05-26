@@ -6,15 +6,17 @@ function accordion() {
 }
 
 function showInfo() {
-    $('.marker').click(function(){
-        $(this).closest('li').find('.content').not(':animated').slideToggle();
-    });
+    $(this).closest('li').find('.content').not(':animated').slideToggle();
+
 }
 
 $(document).ready(accordion);
 
-$('.marker').hover(function() {
-    $(this).css('cursor', 'pointer');
-});
+$(document).ready( function(){
 
-$(document).on('click', '.marker', showInfo)
+    $('.marker').hover(function() {
+        $(this).css('cursor', 'pointer');
+    });
+
+    $('.marker').click(showInfo);
+});
