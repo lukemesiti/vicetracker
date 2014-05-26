@@ -12,22 +12,21 @@ class SubvicesController < ApplicationController
         @subvice.vice = @vice
         @subvice.save
 
-        redirect_to vice_path(@vice)
+        redirect_to vice_path(@vice), notice: 'Subvice successfully created.'
     end
 
     def edit
-        # binding.pry
     end
 
     def update
         @subvice.update(subvice_params)
 
-        redirect_to @vice
+        redirect_to @vice, notice: 'Subvice successfully updated.'
     end
 
     def destroy
         @subvice.destroy
-        redirect_to vice_path(@vice)
+        redirect_to vice_path(@vice), notice: 'Subvice successfully removed.'
     end
 
     private
