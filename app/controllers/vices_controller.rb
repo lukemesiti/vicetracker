@@ -16,12 +16,12 @@ class VicesController < ApplicationController
     def create
         @vice = Vice.find_by(id: params[:vice][:id])
         current_user.vices << @vice
-        redirect_to vices_path
+        redirect_to vices_path, notice: 'Vice successfully created.'
     end
 
     def destroy
         current_user.vices.delete(@vice)
-        redirect_to vices_path
+        redirect_to vices_path, notice: 'Vice successfully removed.'
     end
 
     private

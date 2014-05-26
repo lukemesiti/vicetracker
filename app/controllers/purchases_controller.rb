@@ -11,7 +11,7 @@ class PurchasesController < ApplicationController
         @purchase.subvice = @subvice
         @purchase.save
 
-        redirect_to vice_path(@vice)
+        redirect_to vice_path(@vice), notice: 'Purchase sucessfully created.'
     end
 
     private
