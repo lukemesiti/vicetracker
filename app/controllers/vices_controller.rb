@@ -16,7 +16,7 @@ class VicesController < ApplicationController
     def create
         @vice = Vice.find_by(id: params[:vice][:id])
         current_user.vices << @vice
-        redirect_to vices_path, notice: 'Vice successfully created.'
+        redirect_to vice_path(@vice), notice: 'Vice successfully created.'
     end
 
     def destroy
