@@ -1,4 +1,4 @@
-.index-purchase {
+.subvice-box {
     background: #f5f5f5;
     width: 600px;
     margin: 20px auto;
@@ -32,7 +32,7 @@
     }
 }
 
-.index-purchase:hover {
+.subvice-box:hover {
     box-shadow: 0 0 15px 2px #bababa;
 }
 
@@ -52,17 +52,6 @@
         margin: 0 0 15px 0;
     }
 }
-
-.list-purchases {
-    transition: box-shadow .2s ease-in-out;
-    -moz-transition: box-shadow .2s ease-in-out;
-    -webkit-transition: box-shadow .2s ease-in-out;
-}
-
-.list-purchase-box {
-    box-shadow: 0 0 15px 2px #bababa;
-}
-
 
 
 .timeline {
