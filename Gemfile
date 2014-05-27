@@ -9,6 +9,9 @@ gem 'pg'
 # Use devise for authentication
 gem 'devise'
 
+# Use to send email
+gem 'pony'
+
 #Use pry for debugging
 gem 'pry-rails'
 

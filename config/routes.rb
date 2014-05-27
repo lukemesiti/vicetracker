@@ -10,6 +10,10 @@ Vicetracker::Application.routes.draw do
     end
   end
 
+  resources :inquiries, :only => [:new, :create] do
+    get 'thank_you', :on => :collection
+  end
+
   get 'pages/home'
   get 'pages/about'
   get 'pages/contact'
