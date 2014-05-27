@@ -1,4 +1,11 @@
 <%= form_for inquiry do |f| %>
+    <% if inquiry.errors.any? %>
+        <ul>
+            <% inquiry.errors.full_messages.each do |msg| %>
+                <li><%= msg %></li>
+            <% end %>
+        </ul>
+    <% end %>
     <div>
         <%= f.label :name %><br/>
         <%= f.text_field :name %>
