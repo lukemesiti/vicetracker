@@ -6,7 +6,7 @@ class VicesController < ApplicationController
     end
 
     def new
-        @vice = current_user.vices.new
+        @vice = Vice.new
     end
 
     def show

@@ -18,14 +18,16 @@
 
     <% if @subvices.present? %>
         <% @subvices.each do |subvice| %>
-            <div class="index-purchase">
+            <div class="subvice-box col-lg-2">
                 <div class="row">
-                    <div class="column vice-name"><%= subvice.name %></div>
-                    <div class="column"><%= link_to 'Edit', edit_subvice_path(subvice) %></div>
-                    <div class="column"><%= link_to 'Remove', subvice, method: :delete, data: { confirm: 'Are you sure?' } %></div>
+                    <div class="vice-name"><%= subvice.name %></div>
                 </div>
                 <div class="row">
                     <div class="column"><%= link_to 'Add Purchase', new_subvice_purchase_path(subvice) %></div>
+                </div>
+                <div class="row">
+                    <div class="column"><%= link_to 'Edit', edit_subvice_path(subvice) %></div>
+                    <div class="column"><%= link_to 'Remove', subvice, method: :delete, data: { confirm: 'Are you sure?' } %></div>
                 </div>
                 <div>
                     <%= distance_of_time_in_words(Time.now - current_user.last_time_consumed(subvice.id)) %> since your last <%= subvice.name %>
@@ -52,6 +54,12 @@
                 </div>
             </div><!-- /.col-lg-4 -->
         <% end %>
+    <% else %>
+        <div class="subvice-box">
+            <div class="row">
+                <div class="column vice-name">You haven't added any subvices yet.</div>
+            </div>
+        </div>
     <% end %>
 </div>
 
