@@ -15,7 +15,11 @@ class VicesController < ApplicationController
 
     def create
         @vice = Vice.find_by(id: params[:vice][:id])
-        current_user.vices << @vice
+        if current_user.vices.detect {|v| v["name"] == @vice.name } == nil
+            current_user.vices << @vice
+        else
+            redirect_to new_vice_path, alert: 'Vice already exists.' and return
+        end
         redirect_to vice_path(@vice), notice: 'Vice successfully created.'
     end
 
