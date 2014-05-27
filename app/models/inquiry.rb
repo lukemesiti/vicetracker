@@ -1,6 +1,6 @@
 class Inquiry
     extend ActiveModel::Naming
-    extend ActiveModel::Conversion
+    include ActiveModel::Conversion
 
     attr_accessor :name, :email, :message
 
