@@ -18,6 +18,26 @@
     min-width: 100%;
 }
 
+.navbar-default {
+    background-color: #000;
+    border-color: #000;
+
+    .navbar-brand {
+        color: #fff;
+    }
+
+    .navbar-nav {
+
+        li {
+
+            a {
+                color: #fff;
+            }
+        }
+    }
+    
+}
+
 body {
     font-family: 'Roboto', sans-serif;
     font-weight: 300;
@@ -40,14 +60,6 @@ h3 {
 
 h4 {
     display: inline;
-}
-
-.alert {
-    color: red;
-}
-
-.notice {
-    color: green;
 }
 
 .alert-error {
