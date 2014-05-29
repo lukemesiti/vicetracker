@@ -3,18 +3,16 @@
         <div class="heading"><%= @vice.name %></div>
         <span><%= link_to 'Remove Vice', @vice, method: :delete, data: { confirm: 'Are you sure?' } %></span>
     </div>
-    <div>Amount consumed per day</div>
+    <div class="chart-heading">Amount consumed per day</div>
     <div>
         <%= column_chart @subvices.map{|subvice|
         {name: subvice.name, data: subvice.purchases.group_by_day(:created_at).sum(:quantity)}
         } %> 
     </div>
     
-    <div>
+    <div class="add-subvice">
         <%= link_to 'Add Sub category', new_vice_subvice_path(@vice) %>
     </div>
-
-
 
     <% if @subvices.present? %>
         <% @subvices.each do |subvice| %>
