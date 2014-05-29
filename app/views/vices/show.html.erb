@@ -10,11 +10,9 @@
         } %> 
     </div>
     
-    <div>
+    <div class="add-subvice">
         <%= link_to 'Add Sub category', new_vice_subvice_path(@vice) %>
     </div>
-
-
 
     <% if @subvices.present? %>
         <% @subvices.each do |subvice| %>
