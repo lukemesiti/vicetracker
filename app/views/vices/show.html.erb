@@ -27,9 +27,9 @@
                         <%= distance_of_time_in_words(Time.now - current_user.last_time_consumed(subvice.id)) %> since you last drank <%= subvice.name %>
                     </div>
                     <% if current_user.goal_achieved(subvice, Time.now) %>
-                        <div><span class="label label-success">On track to achieve goal today</span></div>
+                        <div><span class="label label-success">You're on track to achieve daily goal</span></div>
                     <% else %>
-                        <div><span class="label label-fail">Did not achieve goal today</span></div>
+                        <div><span class="label label-fail">You did not achieve daily goal</span></div>
                     <% end %>
                     <div class="">
                         <%= link_to 'Add Purchase', new_subvice_purchase_path(subvice) %>
