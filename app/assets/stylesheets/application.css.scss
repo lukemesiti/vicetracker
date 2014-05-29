@@ -51,16 +51,15 @@
     padding: 0;
 }
 
-.open {
-    background-color: #666;
-    color: #fff;     
-}
-
 .dropdown-menu li a:hover {
     background-color: #666;
 }
 
 
+.navbar-default .navbar-nav > .open > a, .navbar-default .navbar-nav > .open > a:hover, .navbar-default .navbar-nav > .open > a:focus {
+    background-color: #666;
+    color: #fff;
+}
 
 //--------------------------------------------------------------------
 //--------------------------------------------------------------------
