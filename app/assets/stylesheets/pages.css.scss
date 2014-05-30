@@ -26,14 +26,15 @@
 
     a {
         color: #bababa;
-        transition: color .25s ease-in-out;
-        -moz-transition: color .25s ease-in-out;
-        -webkit-transition: color .25s ease-in-out;
+        transition: color .1s ease-in-out;
+        -moz-transition: color .1s ease-in-out;
+        -webkit-transition: color .1s ease-in-out;
     }
 
     a:hover {
         text-decoration: none;
         color: black;
+        border-bottom: 2px solid black;
     }
 
     .home-insentive-selected {
