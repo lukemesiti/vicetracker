@@ -53,6 +53,32 @@
         display: inline-block;
         padding: 5px 120px;
     }
+
+    .overlay {
+      border-top: 50px solid #f2f2f2;
+      border-left: 50px solid transparent;
+      top: 0;
+      height: 0;
+      position: absolute;
+      right: 0;
+      padding: 0;
+      -moz-transition: all 0.3s ease-in-out;
+      -o-transition: all 0.3s ease-in-out;
+      -webkit-transition: all 0.3s ease-in-out;
+      transition: all 0.3s ease-in-out;
+      width: 0;
+    }
+    &:hover .overlay {
+      border-top: 100px solid #f2f2f2;
+      border-left: 100px solid transparent;
+      padding: 0;
+    }
+    .corner-overlay-content {
+      padding: 0;
+      position: absolute;
+      top: 5px;
+      right: 15px;
+    }
 }
 
 .chart-heading {
@@ -76,29 +102,7 @@
 }
 
 
-.overlay {
-  border-top: 0 solid #f2f2f2;
-  border-right: 0 solid transparent;
-  top: 0;
-  height: 0;
-  position: absolute;
-  right: 0;
-  -moz-transition: all 0.2s ease-in-out;
-  -o-transition: all 0.2s ease-in-out;
-  -webkit-transition: all 0.2s ease-in-out;
-  transition: all 0.2s ease-in-out;
-  width: 0;
-}
-.subvice-box:hover .overlay {
-  border-top: 100px solid #f2f2f2;
-  border-right: 100px solid transparent;
-}
-.subvice-box .corner-overlay-content {
-  top: 15px;
-  color: #333;
-  position: absolute;
-  right: 15px;
-}
+
 
 
 
