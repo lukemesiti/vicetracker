@@ -5,26 +5,49 @@
 
             <div class="heading">Edit Profile</div>
 
-            <div><%= f.text_field :username, :class => "form-control", :autofocus => true %></div>
+            <div>
+                <%= f.label :username, class: 'form-label' %>
+                <%= f.text_field :username, :class => "form-control field", :autofocus => true %>
+            </div>
 
-            <div><%= f.email_field :email, :class => "form-control" %></div>
+            <div>
+                <%= f.label :email, class: 'form-label' %>
+                <%= f.email_field :email, :class => "form-control field" %>
+            </div>
 
             <% if devise_mapping.confirmable? && resource.pending_reconfirmation? %>
               <div>Currently waiting confirmation for: <%= resource.unconfirmed_email %></div>
             <% end %>
 
-            <div><%= f.password_field :current_password, placeholder: 'Current Password', :class => "form-control" %></div>
-            <br/>
-            <div><%= f.password_field :password, placeholder: 'New Password', :class => "form-control", :autocomplete => "off" %></div>
+            <div>
+                <%= f.label :current_password, class: 'form-label' %>
+                <%= f.password_field :current_password, :class => "form-control field" %>
+            </div>
 
-            <div><%= f.password_field :password_confirmation, placeholder: 'Confirm New Password', :class => "form-control" %></div>
+            <div>
+                <%= f.label :new_password, class: 'form-label' %>
+                <%= f.password_field :password, :class => "form-control field", :autocomplete => "off" %>
+            </div>
 
-            <div><%= f.submit "Update", :class => "btn btn-lg btn-primary" %></div>
+            <div>
+                <%= f.label :confirm_password, class: 'form-label' %>
+                <%= f.password_field :password_confirmation, :class => "form-control field" %>
+            </div>
+
+            <div>
+                <span class="form-label"></span>
+                <%= f.submit "Update", :class => "btn btn-lg btn-primary" %>
+            </div>
         <% end %>
 
         <div class="line"></div>
+        
+        <div class="sign-box">
+            <span class="form-label">Unhappy? </span>
+            <p><%= button_to "Cancel Account", registration_path(resource_name), :class => "btn btn-lg btn-primary ", :data => { :confirm => "Are you sure?" }, :method => :delete %></p>
+        </div>
 
-        <p>Unhappy? <%= button_to "Cancel Account", registration_path(resource_name), :class => "btn btn-lg btn-primary ", :data => { :confirm => "Are you sure?" }, :method => :delete %></p>
+        
   
     </div>
   

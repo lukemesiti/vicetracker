@@ -1,8 +1,12 @@
 .form-container {
-    max-width: 600px;
+    max-width: 800px;
 
     .heading {
         margin: 0 0 15px 0;
+    }
+
+    div {
+        display: block;
     }
 
     .form-control {
@@ -11,5 +15,22 @@
         height: 40px;
         font-size: 20px;
         margin: 0 15px 15px 0;
+
+        &:focus {
+        box-shadow: none;
+        }    
+    }
+
+    .form-label {
+        display: inline-block;
+        float: left;
+        height: 40px;
+        font-size: 20px;
+        margin: 0 15px 15px 0;
+        width: 200px;
+    }
+
+    .field {
+        width: 415px;
     }
 }
