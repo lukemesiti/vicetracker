@@ -1,20 +1,41 @@
 .sign-box {
-    max-width: 500px;
+    max-width: 800px;
 
     .heading {
         margin: 0 0 15px 0;
     }
 
-    .form-control {
-        height: 40px;
-        font-size: 20px;
+    div {
+        display: block;
+        margin: 0 0 15px 0;
     }
 
-    div {
-        margin: 0 0 15px 0;
+    .form-control {
+        display: inline-block;
+        float: left;
+        height: 40px;
+        font-size: 20px;
+        margin: 0 15px 15px 0;
+
+        &:focus {
+        box-shadow: none;
+        }    
+    }
+
+    .form-label {
+        display: inline-block;
+        float: left;
+        height: 40px;
+        font-size: 20px;
+        margin: 0 15px 15px 0;
+        width: 200px;
     }
 
     .line {
         border-bottom: 1px solid #666;
+    }
+
+    .field {
+        width: 415px;
     }
 }
