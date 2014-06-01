@@ -1,5 +1,7 @@
 $(document).ready(function(){
-    $('.carousel').carousel();
+    $('.carousel').carousel({
+        interval: false
+    });
 
     $('#insentives-list-right').hide();
 
