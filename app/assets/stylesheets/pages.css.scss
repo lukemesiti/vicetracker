@@ -9,6 +9,7 @@
 
 .carousel-frame {
     height: 600px;
+    padding: 100px 0 0 0;
 }
 
 .green {
@@ -23,6 +24,12 @@
     background-color: #ff7bac;
 }
 
+.carousel-content {
+    padding: 100px;
+    margin: 0 auto;
+    width: 800px;
+}
+
 // #1a1a1a; //dark grey
 // #3fa9f5; //sky blue
 // #7ac943; //light green
@@ -31,11 +38,10 @@
 // #ff7bac; //pink
 
 .get-started {
-    display: inline;
+    display: block;
+    color: #fff;
 
     .btn-primary {
-        float: right;
-        margin-left: 20px;
         width: 275px;
         height: 50px;
         font-weight: 200;
