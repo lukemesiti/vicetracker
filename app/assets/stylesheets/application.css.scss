@@ -117,6 +117,16 @@ h4 {
     display: inline;
 }
 
+.btn-primary {
+    background-color: #3fa9f5;
+    border-color: #3fa9f5;
+
+    &:hover {
+        background-color: #1c95ec;
+        border-color: #1c95ec;
+    }
+}
+
 
 //--------------------------------------------------------------------
 //-----------------------------alert----------------------------------
