@@ -19,12 +19,12 @@ $(document).ready(function(){
         $('#why').addClass("home-insentive-selected");
     });
 
-    $(".why-description").mouseover( function() {
-        $(this).prev().addClass('why-number-grow');
+    $(".how-description").mouseover( function() {
+        $(this).prev().addClass('how-number-grow');
     });
 
-    $(".why-description").mouseout( function() {
-        $(this).prev().removeClass('why-number-grow');
+    $(".how-description").mouseout( function() {
+        $(this).prev().removeClass('how-number-grow');
     });
 
     $(".money-description").mouseover(function() {
