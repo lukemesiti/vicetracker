@@ -8,8 +8,17 @@
 }
 
 .carousel-frame {
-    height: 600px;
+    height: 500px;
     padding: 100px 0 0 0;
+}
+
+.carousel-icon {
+    fill: #fff;
+}
+
+.carousel-item {
+    display: inline-block;
+    width: 350px;
 }
 
 .green {
@@ -25,7 +34,7 @@
 }
 
 .carousel-content {
-    padding: 120px;
+    padding: 50px 120px;
     margin: 0 auto;
     max-width: 1000px;
     text-align: center;
