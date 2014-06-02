@@ -25,9 +25,14 @@
 }
 
 .carousel-content {
-    padding: 100px;
+    padding: 120px;
     margin: 0 auto;
-    width: 800px;
+    max-width: 1000px;
+    text-align: center;
+
+    span {
+        margin: 20px 0;
+    }
 }
 
 // #1a1a1a; //dark grey

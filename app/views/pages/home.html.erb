@@ -17,8 +17,7 @@
       <div class="carousel-inner">
         <div class="item active carousel-frame green"><!-- class of active since it's the first item -->
           <div class="carousel-content">
-            <div class="get-started heading">Tracking your vices,<br /> made easy.</div>
-            <div class="get-started"><%= link_to "Join, it's free", new_user_registration_path, :class => "btn btn-primary btn-large" %></div>
+            
           </div>
 
           <div class="carousel-caption">
@@ -31,9 +30,13 @@
           </div>
         </div>
         <div class="item carousel-frame pink">
-          <div class="carousel-caption">
-            <p>Make an informed assessment.</p>
+          <div class="carousel-content">
+            <span class="get-started heading">Tracking your vices, made easy.</span>
+            <span class="get-started"><%= link_to "Join, it's free", new_user_registration_path, :class => "btn btn-primary btn-large" %></span>
           </div>
+<!--           <div class="carousel-caption">
+            <p>Make an informed assessment.</p>
+          </div> -->
         </div>
       </div><!-- /.carousel-inner -->
       <!--  Next and Previous controls below
