@@ -77,6 +77,10 @@
     }
 }
 
+.insentives-steps {
+    text-align: center;
+}
+
 .flip-container {
     -webkit-perspective: 1000;
     -moz-perspective: 1000;
@@ -151,70 +155,28 @@
     background: #fff;
 }
 
-.home-insentives-list {
-    text-align: center;
+.insentives-icon {
 
-    ul {
-        list-style-type: none;
-        padding: 10px;
+    display: inline-block;
+
+    .icon {
+        margin: 20px 50px;
     }
+    
+}
 
-    li {
 
-        display: inline-block;
 
-        .why-description {
-            width: 200px;
-            height: 150px;
-            padding: 40px 10px;
-            margin: 10px 50px;
-            display: block;
-            background-color: #e9e9e9;
-            border: 2px solid black;
-            -moz-border-radius: 10px;
-            -webkit-border-radius: 10px;
-            border-radius: 10px; /* future proofing */
-            -khtml-border-radius: 10px; /* for old Konqueror browsers */
+.money {
+    fill: #7ac943;
+}
 
-            transition: box-shadow .2s ease-in-out,
-                        background-color .2s ease-in-out;
-            -moz-transition: box-shadow .2s ease-in-out,
-                        background-color .2s ease-in-out;
-            -webkit-transition: box-shadow .2s ease-in-out,
-                        background-color .2s ease-in-out;
+.health {
+    fill: #ff1d25;
+}
 
-        }
-        .why-description:hover {
-            box-shadow: 0 0 15px 2px #bababa;
-            background-color: #fff;
-        }
-
-        .icon {
-            display: inline-block;
-            margin: 15px;
-            height: 40px;
-            width: 40px;
-            transition: all 0.1s ease-in-out;
-        }
-
-        .money {
-            fill: #7ac943;
-        }
-
-        .health {
-            fill: #ff1d25;
-        }
-
-        .track {
-            fill: #ff931e;
-        }
-    }
-
-    .shadow {
-        box-shadow: 0 0 15px 2px #bababa;
-        background-color: #fff;
-    }
-
+.track {
+    fill: #ff931e;
 }
 
 #foot {
