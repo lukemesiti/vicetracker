@@ -75,11 +75,6 @@
         color: black;
         border-bottom: 2px solid black;
     }
-
-    .home-insentives-heading {
-        display: inline-block;
-        padding: 0 10px;
-    }
 }
 
 .flip-container {
@@ -156,7 +151,6 @@
     background: #fff;
 }
 
-
 .home-insentives-list {
     text-align: center;
 
@@ -232,49 +226,4 @@
 //---------------------------------------------------------------------
 // About Page
 //---------------------------------------------------------------------
-
-.fade-in {
-    position: absolute;
-    opacity:0;
-    -moz-transition: opacity 1s ease-in;
-    -webkit-transition: opacity 1s ease-in; 
-    transition: opacity 2s ease-in;    
-}
-
-.smokes {
-    height: 250px;
-    left: 250px;
-    top: 300px;
-}
-
-.beer {
-    height: 250px;
-    left: 520px;
-    top: 300px;
-}
-
-.food {
-    height: 300px;
-    left: 800px;
-    top: 250px;
-}
-
-.about {
-    position: absolute;
-    top: 600px;
-    left: 250px;
-    width: 200px;
-    height: 100px;
-    text-align: center;
-}
-
-.two {
-    left: 550px;
-}
-
-.three {
-    left: 950px;
-}
-
-
 
