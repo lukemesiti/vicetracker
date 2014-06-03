@@ -184,7 +184,6 @@
     overflow-y: scroll;
     /* complete liquid height based on the parent's height!! */
     height:200px;
-    z-index: 100;
     opacity: 1;
 
     /* only transition on transform properties which are hardware accelerated = way better performances */
@@ -210,21 +209,29 @@
             transform: translate(0, -100%);
 }
 
-.slide-container:hover .background p {
+.slide-container:hover .background {
     opacity: 1;
 }
 
-.background p {
+.background {
     position: absolute;
     top: 0;
     left: 0;
-    z-index: 50;
-    opacity: 0;
+    line-height: 200px;
+    text-align: center;
 
+    opacity: 0;
     -webkit-transition: .4s ease-in-out;
        -moz-transition: .4s ease-in-out;
         -ms-transition: .4s ease-in-out;
             transition: .4s ease-in-out;
+
+    span {
+    display: inline-block;
+    vertical-align: middle;
+    line-height: normal;
+    
+    }
 }
 
 .money {
