@@ -230,7 +230,7 @@
     display: inline-block;
     vertical-align: middle;
     line-height: normal;
-    
+
     }
 }
 
@@ -246,13 +246,14 @@
     fill: #ff931e;
 }
 
-#foot {
+footer {
     border-top: 2px solid black; 
     text-align: center;
+    background: #242424;
+    color: #fff;
+    margin: 0;
+    height: 100px;
+    padding: 25px;
 }
 
-
-//---------------------------------------------------------------------
-// About Page
-//---------------------------------------------------------------------
 
