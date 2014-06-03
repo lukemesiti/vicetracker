@@ -127,54 +127,112 @@
     transform-style: preserve-3d;
 
     position: relative;
-}
 
-.front, .back {
-    -webkit-backface-visibility: hidden;
-    -moz-backface-visibility: hidden;
-    -ms-backface-visibility: hidden;
-    backface-visibility: hidden;
+    .front, .back {
+        -webkit-backface-visibility: hidden;
+        -moz-backface-visibility: hidden;
+        -ms-backface-visibility: hidden;
+        backface-visibility: hidden;
 
-    position: absolute;
-    top: 0;
-    left: 0;
+        position: absolute;
+        top: 0;
+        left: 0;
 
-    line-height: 200px;
-    text-align: center;
+        line-height: 200px;
+        text-align: center;
 
-    span {
-        display: inline-block;
-        vertical-align: middle;
-        line-height: normal;
+        span {
+            display: inline-block;
+            vertical-align: middle;
+            line-height: normal;
+        }
     }
-}
 
-.front {
-    z-index: 2;
-    background: #3fa9f5;
-    color: #fff;
-}
+    .front {
+        z-index: 2;
+        background: #3fa9f5;
+        color: #fff;
+    }
 
-.back {
-    -webkit-transform: rotateY(-180deg);
-    -moz-transform: rotateY(-180deg);
-    -o-transform: rotateY(-180deg);
-    -ms-transform: rotateY(-180deg);
-    transform: rotateY(-180deg);
-    background: #fff;
+    .back {
+        -webkit-transform: rotateY(-180deg);
+        -moz-transform: rotateY(-180deg);
+        -o-transform: rotateY(-180deg);
+        -ms-transform: rotateY(-180deg);
+        transform: rotateY(-180deg);
+        background: #fff;
+    }
 }
 
 .insentives-icon {
 
     display: inline-block;
+    margin: 20px 50px;
 
-    .icon {
-        margin: 20px 50px;
-    }
     
 }
 
+.slide-container {
+    overflow:hidden;
+    position:relative;
+    /* the container's height will determine the height of its slider  */
+    width: 200px;
+}
 
+
+.slider {
+    overflow-y: scroll;
+    /* complete liquid height based on the parent's height!! */
+    height:200px;
+    opacity: 1;
+
+    /* only transition on transform properties which are hardware accelerated = way better performances */
+    -webkit-transition:-webkit-transform .3s ease;
+       -moz-transition:   -moz-transform .3s ease;
+        -ms-transition:    -ms-transform .3s ease;
+            transition:        transform .3s ease;
+}
+
+.slider { 
+    /* visible */
+    -webkit-transform: translate(0, 0%);
+       -moz-transform: translate(0, 0%);
+        -ms-transform: translate(0, 0%);
+            transform: translate(0, 0%);
+
+}
+.slide-container:hover .slider { 
+    /* completely offscreen */
+    -webkit-transform: translate(0, -100%);
+       -moz-transform: translate(0, -100%);
+        -ms-transform: translate(0, -100%);
+            transform: translate(0, -100%);
+}
+
+.slide-container:hover .background {
+    opacity: 1;
+}
+
+.background {
+    position: absolute;
+    top: 0;
+    left: 0;
+    line-height: 200px;
+    text-align: center;
+
+    opacity: 0;
+    -webkit-transition: .4s ease-in-out;
+       -moz-transition: .4s ease-in-out;
+        -ms-transition: .4s ease-in-out;
+            transition: .4s ease-in-out;
+
+    span {
+    display: inline-block;
+    vertical-align: middle;
+    line-height: normal;
+
+    }
+}
 
 .money {
     fill: #7ac943;
@@ -188,13 +246,14 @@
     fill: #ff931e;
 }
 
-#foot {
+footer {
     border-top: 2px solid black; 
     text-align: center;
+    background: #242424;
+    color: #fff;
+    margin: 0;
+    height: 100px;
+    padding: 25px;
 }
 
-
-//---------------------------------------------------------------------
-// About Page
-//---------------------------------------------------------------------
 
