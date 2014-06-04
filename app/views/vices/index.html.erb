@@ -8,8 +8,7 @@
         <% current_user.purchases.order("created_at DESC").group_by(&:group_by_criteria).each do |k,v| %>
             <li>
                 <div class="date">
-                    <a href="#<%=k%>" class="head"><%= k.to_time.strftime('%B %e') %></a>
-                    <span class="marker"></span>
+                    <span class="marker"><a href="#<%=k%>" class="head"><%= k.to_time.strftime('%B %e') %></a></span>
                 </div>
                 <div class="info">
                     <ul id="<%=k%>" class="content">
