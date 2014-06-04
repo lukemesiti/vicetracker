@@ -1,6 +1,6 @@
 <div class="jumbotron new-vice">
     <%= form_for(@vice) do |f| %>
-        <div class="heading">New Vice</div>
+        <h1>New Vice</h1>
         
         <div class="field">
             <%= f.collection_select :id, Vice.all, :id, :name, :class => "form-control" %>
