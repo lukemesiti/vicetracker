@@ -39,6 +39,10 @@
             }
         }
     } 
+
+    a:hover {
+        border-bottom: none;  
+    }
 }
 
 .navbar-default .navbar-nav li a:hover, .navbar-default .navbar-brand:hover {
