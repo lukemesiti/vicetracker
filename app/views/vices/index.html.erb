@@ -3,34 +3,35 @@
         <h1><%= current_user.username %>, your timeline</h1>
     </div>
 
-    <div>
-        <ul class="timeline">
+    <div class="timeline">
         <% current_user.purchases.order("created_at DESC").group_by(&:group_by_criteria).each do |k,v| %>
-            <li>
-                <div class="date">
-                    <span class="marker"><a href="#<%=k%>" class="head"><%= k.to_time.strftime('%B %e') %></a></span>
-                </div>
-                <div class="info">
-                    <ul id="<%=k%>" class="content">
-                        <% v.each do |x| %>
-                            <li>
-                                <%= x.quantity %> 
-                                (<%= x.subvice.name %>) totalling 
-                                $<%= x.cost %> 
-                                <%= x.created_at.to_time.strftime('at %l:%M %p') %>
-                            </li>
-                        <% end %>
-                    </ul>
-                </div>
-            </li>
-        <% end %>
-        </ul>
-        <ul class="timeline">
+        <div class="day">
             <div class="date">
-                <li>You joined <%= current_user.created_at.to_time.strftime('%B %e at %l:%M %p') %></li>
+                <a href="#<%=k%>" class="head"><%= k.to_time.strftime('%B %e') %></a>
             </div>
-            
-        </ul>
+            <div class="marker">
+                <span class="dot"></span>
+            </div>
+            <div class="purchases">
+                <ul id="<%=k%>" class="content">
+                    <% v.each do |x| %>
+                        <li>
+                            <%= x.quantity %> 
+                            (<%= x.subvice.name %>) totalling 
+                            $<%= x.cost %> 
+                            <%= x.created_at.to_time.strftime('at %l:%M %p') %>
+                        </li>
+                    <% end %>
+                </ul>
+            </div>
+        </div>
+        <% end %>
+        
+        <div class="day">
+            <div class="date">
+                You joined <%= current_user.created_at.to_time.strftime('%B %e at %l:%M %p') %>
+            </div>
+        </div>
     </div>
 
 </div>
