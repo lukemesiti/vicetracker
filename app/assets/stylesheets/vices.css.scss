@@ -133,14 +133,14 @@
 
         .marker {
             background-color: #fff;
-            border: 2px solid #aaa;
-            height: 40px;
-            width: 40px;
-            border-radius: 100px;
+            //border: 2px solid #aaa;
+            height: 100px;
+            width: 180px;
+            padding: 36px;
             display: block;
             float: right;
-            margin-right: -40px;
-            margin-top: -7px;
+            margin-right: -108px;
+            margin-top: 12px;
             z-index: 200;
             position: relative;
         }
@@ -148,10 +148,14 @@
 
     .info {
         display: block;
-        margin: 0 50% 0 20px;
-        padding: 0 10px 0 0;
-        text-align: right;
+        margin: 90px 50% 0 0;
+        padding: 0 40px 0 0;
+        text-align: center;
         border-right: 2px solid #aaa;
+
+        ul {
+            padding: 0;
+        }
     }
 
     li {
@@ -161,5 +165,7 @@
 
     .content {
         display: none;
+        margin: 40px 80px 0 45px;
+        background: #fff;
     }
 }
