@@ -120,34 +120,80 @@
 
 .timeline {
     width: 900px;
+    margin: 0 auto;
 
     .day {
         width: 900px;
 
         div {
             display: table-cell;
+            vertical-align: middle;
         }
         
         .date {
-            width: 200px;
+            width: 445px;
             min-height: 20px;
-            //border: 1px solid purple;   
+            //border: 1px solid purple; 
+
+            span {
+                float: right;
+                margin: 10px 20px 10px 10px;
+                padding: 10px;
+                //border: 1px solid pink;
+                background: #fff;
+            }  
         }
 
         .marker {
-            width: 200px;
+            width: 2px;
             height: 100%;
-            border-right: 1px solid red;
-
-            span {
-                display: inline-block;
-            }
+            border: 1px solid #3fa9f5;
         }
 
+        .circle-box {
+            height: 100%;
+
+            .outer-circle {
+                display: inline-block;
+                width: 20px;
+                height: 20px;
+                background: #f2f2f2;
+                -moz-border-radius: 50px;
+                -webkit-border-redius: 50px;
+                border-radius: 50px;
+                margin-left: -15px;
+                margin-bottom: -5px;
+            }
+
+            .inner-circle {
+                display: inline-block;
+                width: 10px;
+                height: 10px;
+                background: #3fa9f5;
+                -moz-border-radius: 50px;
+                -webkit-border-redius: 50px;
+                border-radius: 50px;
+                margin-left: -11px;
+            }
+        
+        }
+        
+
         .purchases {
-            min-width: 400px;
+            min-width: 445px;
             height: 100%;
             //border: 1px solid orange;
+            padding: 10px 10px 10px 20px;
+
+            .box {
+                //border: 1px solid green;
+                padding: 10px;
+                background: #fff;
+            }
+
+            div {
+                display: block;
+            }
         }
 
     }
