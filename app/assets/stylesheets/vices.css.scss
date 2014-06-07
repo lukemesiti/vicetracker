@@ -129,7 +129,33 @@
             display: table-cell;
             vertical-align: middle;
         }
+
+        .large-circle {
+            display: block;
+            width: 16px;
+            height: 16px;
+            background: #3fa9f5;
+            -moz-border-radius: 50px;
+            -webkit-border-redius: 50px;
+            border-radius: 50px;
+            margin-left: 438px;
+            margin-top: 5px;
+        }
+
+        .joined {
+            width: 900px;
+            text-align: center;
+            padding: 10px;
+        }
         
+        .end {
+            display: block;
+            width: 2px;
+            height: 30px;
+            border: 1px dashed #3fa9f5;
+            margin-left: 445px;
+        }
+
         .date {
             width: 445px;
             min-height: 20px;
