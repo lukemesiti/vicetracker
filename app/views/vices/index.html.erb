@@ -7,22 +7,28 @@
         <% current_user.purchases.order("created_at DESC").group_by(&:group_by_criteria).each do |k,v| %>
         <div class="day">
             <div class="date">
-                <a href="#<%=k%>" class="head"><%= k.to_time.strftime('%B %e') %></a>
+                <span class="head"><%= k.to_time.strftime('%B %e') %></span>
             </div>
             <div class="marker">
-                <span class="dot"></span>
             </div>
+            <div class="circle-box">
+                <span class="outer-circle"></span><span class="inner-circle"></span>
+            </div>
+            
+            <div class="triangle-box">
+                <span class="left-triangle"></span>
+            </div>            
             <div class="purchases">
-                <ul id="<%=k%>" class="content">
+                <div class="box">
                     <% v.each do |x| %>
-                        <li>
+                        <div>
                             <%= x.quantity %> 
                             (<%= x.subvice.name %>) totalling 
                             $<%= x.cost %> 
                             <%= x.created_at.to_time.strftime('at %l:%M %p') %>
-                        </li>
+                        </div>
                     <% end %>
-                </ul>
+                </div>
             </div>
         </div>
         <% end %>
