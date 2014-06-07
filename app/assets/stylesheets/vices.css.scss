@@ -151,7 +151,6 @@
         }
 
         .circle-box {
-            height: 100%;
 
             .outer-circle {
                 display: inline-block;
@@ -177,13 +176,27 @@
             }
         
         }
+
+        .triangle-box {
+            width: 15px;
+
+            .left-triangle {
+                float: right;
+                width: 0;
+                height: 0;
+                border-top: 5px solid transparent;
+                border-right: 10px solid #fff;
+                border-bottom: 5px solid transparent;
+                margin-bottom: -3px;
+            }
+        }
         
 
         .purchases {
             min-width: 445px;
             height: 100%;
             //border: 1px solid orange;
-            padding: 10px 10px 10px 20px;
+            padding: 10px 10px 10px 0;
 
             .box {
                 //border: 1px solid green;
@@ -193,6 +206,15 @@
 
             div {
                 display: block;
+            }
+
+            .left-triangle {
+                float: right;
+                width: 0;
+                height: 0;
+                border-top: 4px solid transparent;
+                border-right: 8px solid red;
+                border-bottom: 4px solid transparent;
             }
         }
 
