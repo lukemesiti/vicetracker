@@ -4,6 +4,9 @@
     </div>
 
     <div class="timeline">
+        <div class="day">
+            <div class="end"></div>
+        </div>
         <% current_user.purchases.order("created_at DESC").group_by(&:group_by_criteria).each do |k,v| %>
         <div class="day">
             <div class="date">
@@ -34,7 +37,8 @@
         <% end %>
         
         <div class="day">
-            <div class="date">
+            <div class="large-circle"></div>
+            <div class="joined">
                 You joined <%= current_user.created_at.to_time.strftime('%B %e at %l:%M %p') %>
             </div>
         </div>
