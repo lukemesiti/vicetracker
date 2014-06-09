@@ -45,13 +45,6 @@
     }
 }
 
-// #1a1a1a; //dark grey
-// #3fa9f5; //sky blue
-// #7ac943; //light green
-// #ff931e; //orange
-// #ff1d25; //red
-// #ff7bac; //pink
-
 .get-started {
     display: block;
 
@@ -265,3 +258,31 @@ footer {
     }
 }
 
+
+
+//---------------------------------------------------------------------------
+//-------------------------------ABOUT---------------------------------------
+//---------------------------------------------------------------------------
+
+
+#timeline {
+    background: #3fa9f5; //sky blue
+}
+
+#vices {
+    background: #7ac943; //light green
+}
+
+#overview {
+    background: #ff931e; //orange
+}
+
+#charts {
+    background: #ff7bac; //pink
+}
+
+.attribution {
+    background: #1a1a1a; //dark grey
+}
+
+// #ff1d25; //red
