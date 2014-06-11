@@ -250,39 +250,51 @@ footer {
 }
 
 
-.about-section {
-    min-height: 300px;
-
-    article {
-        text-align: center;
-    }
-}
-
-
 
 //---------------------------------------------------------------------------
 //-------------------------------ABOUT---------------------------------------
 //---------------------------------------------------------------------------
+// #ff1d25; //red
+// #ff7bac; //pink
 
+.about-div {
+    min-height: 400px;
+    margin: 50px;
+    line-height:400px;
+
+    span {
+        display: inline-block;
+        width: 50%;
+        vertical-align: middle;
+        line-height: normal;
+        text-align: center;
+        padding: 80px;
+    }
+}
 
 #timeline {
     background: #3fa9f5; //sky blue
+
 }
 
 #vices {
     background: #7ac943; //light green
-}
 
-#overview {
-    background: #ff931e; //orange
+    span {
+        margin-left: 520px;
+    }
+
 }
 
 #charts {
-    background: #ff7bac; //pink
+    background: #ff931e; //orange
 }
 
 .attribution {
     background: #1a1a1a; //dark grey
 }
 
-// #ff1d25; //red
+.attribution {
+    margin: 0;
+    color: #fff;
+}
