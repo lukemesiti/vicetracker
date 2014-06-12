@@ -271,9 +271,28 @@ footer {
         padding: 80px;
     }
 
-    div {
+    .about-description {
         display: inline-block;
+        width: 48%;
+        vertical-align: middle;
+        line-height: normal;
+        text-align: center;
+        padding: 80px;
     }
+
+    .icon {
+        display: inline-block;
+        width: 48%;
+        vertical-align: middle;
+        line-height: normal;
+        text-align: center;
+        padding: 80px;
+        float: right;
+    }
+}
+
+.icon {
+    height: 200px;
 }
 
 #timeline {
@@ -284,8 +303,8 @@ footer {
 #vices {
     background: #7ac943; //light green
 
-    span {
-        margin-left: 520px;
+    .icon {
+        float: left;
     }
 
 }
